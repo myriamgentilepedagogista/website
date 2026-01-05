@@ -1,0 +1,84 @@
+
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const projects = [
+  {
+    title: "Insieme è un posto bellissimo",
+    desc: "Libro illustrato ideato e curato da Myriam Gentile che racconta, con delicatezza e verità, il primo giorno di scuola attraverso lo sguardo di un bambino, celebrando l’incontro, l’inclusione e la cura educativa, nato per celebrare i dieci anni del Nido d’Infanzia Bimboland di Corridonia. Testi di Federico Mariucci, Illustrazioni di Daniela Carpineti",
+    image: "https://i.imgur.com/17UKLg1.jpeg"
+  },
+  {
+    title: "La scuola che motiva",
+    desc: "Progetto PNRR di mentoring e contrasto alla dispersione scolastica.",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=1200"
+  },
+  {
+    title: "Aperitivi Pedagogici",
+    desc: "Incontri di formazione e supporto alla genitorialità in contesti informali.",
+    image: "https://i.imgur.com/gwMaIKl.jpeg"
+  },
+  {
+    title: "Workshop DSA",
+    desc: "Formazione specialistica 'Conoscerli per non temerli' rivolta ai docenti.",
+    image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=1200"
+  },
+  {
+    title: "Io Sono",
+    desc: "Evento di sensibilizzazione patrocinato dai comuni del territorio.",
+    image: "https://i.imgur.com/EgYgISV.jpeg"
+  }
+];
+
+const ProjectsCarousel: React.FC = () => {
+  const [current, setCurrent] = useState(0);
+
+  const next = () => setCurrent((current + 1) % projects.length);
+  const prev = () => setCurrent((current - 1 + projects.length) % projects.length);
+
+  return (
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-6 text-center">
+        <h2 className="text-4xl font-serif mb-16 text-[#4A3F35]">Progetti Realizzati</h2>
+        
+        <div className="max-w-6xl mx-auto relative group">
+          <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-[3rem] shadow-2xl">
+            {projects.map((project, i) => (
+              <div 
+                key={i}
+                className={`absolute inset-0 transition-all duration-700 ease-in-out transform ${i === current ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}
+                style={{ transform: `translateX(${(i - current) * 100}%)` }}
+              >
+                <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#4A3F35]/80 via-[#4A3F35]/20 to-transparent"></div>
+                <div className="absolute bottom-12 left-12 right-12 text-left text-white">
+                  <h3 className="text-3xl md:text-4xl font-serif mb-3">{project.title}</h3>
+                  <p className="text-white/80 font-light max-w-xl">{project.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <button onClick={prev} className="absolute left-6 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-[#4A3F35] shadow-lg hover:bg-white transition-all opacity-0 group-hover:opacity-100">
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button onClick={next} className="absolute right-6 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-[#4A3F35] shadow-lg hover:bg-white transition-all opacity-0 group-hover:opacity-100">
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          <div className="flex justify-center gap-3 mt-8">
+            {projects.map((_, i) => (
+              <button 
+                key={i} 
+                onClick={() => setCurrent(i)}
+                className={`w-3 h-3 rounded-full transition-all ${i === current ? 'w-10 bg-[#D68C70]' : 'bg-[#D68C70]/20 hover:bg-[#D68C70]/40'}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ProjectsCarousel;
