@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Mail, MapPin, Send, MessageCircle, Info, Loader2 } from 'lucide-react';
 
@@ -9,12 +10,8 @@ const Contact: React.FC = () => {
     message: '',
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isRedirecting, setIsRedirecting] = useState(false);
   const [status, setStatus] = useState<null | { type: 'success' | 'error'; msg: string }>(null);
-
-  // ✅ URL finale Web App Apps Script (deployment con Code.gs)
-  const GOOGLE_SCRIPT_URL =
-    'https://script.google.com/macros/s/AKfycbxfWn20DQAZmQDH_wFxifMOY_A3SqCDWrOEzAfQdSAwHQ3_nVpPpbhCDAKKEOJF19ga9Q/exec';
 
   const contactInfos = [
     {
@@ -34,11 +31,9 @@ const Contact: React.FC = () => {
     },
   ];
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (isSubmitting) return;
-
-    setIsSubmitting(true);
+    setIsRedirecting(true);
     setStatus(null);
 
     const serviceLabels: Record<string, string> = {
@@ -50,52 +45,31 @@ const Contact: React.FC = () => {
     };
 
     const selectedService = serviceLabels[formData.service] || formData.service;
+    const recipient = "myriamgentilepedagogista@outlook.it";
+    const subject = encodeURIComponent(`Richiesta Contatto: ${selectedService} - ${formData.name}`);
+    
+    const body = encodeURIComponent(
+      `Nuova richiesta dal sito web:\n\n` +
+      `Nome: ${formData.name}\n` +
+      `Email di risposta: ${formData.email}\n` +
+      `Servizio: ${selectedService}\n\n` +
+      `Messaggio:\n${formData.message}`
+    );
 
-    try {
-      const name = formData.name.trim();
-      const email = formData.email.trim();
-      const message = formData.message.trim();
+    // Creazione del link mailto
+    const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
 
-      const payload = new URLSearchParams();
-      payload.append('name', name);
-      payload.append('email', email);
-      payload.append('service', selectedService);
-      payload.append('message', message);
+    // Mostriamo un feedback all'utente e poi apriamo il client email
+    setStatus({
+      type: 'success',
+      msg: 'Sto aprendo la tua applicazione di posta... Controlla la finestra del tuo browser o del tuo computer per inviare il messaggio.',
+    });
 
-      const res = await fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-        },
-        body: payload.toString(),
-      });
-
-      const out: any = await res.json().catch(() => null);
-
-      if (!res.ok || !out?.ok) {
-        throw new Error(out?.error || `HTTP ${res.status}`);
-      }
-
-      setStatus({
-        type: 'success',
-        msg: 'Grazie! La tua richiesta è stata inviata correttamente. Ti risponderò al più presto.',
-      });
-
-      setFormData({
-        name: '',
-        email: '',
-        service: 'consulenza-genitoriale',
-        message: '',
-      });
-    } catch (err) {
-      console.error('Contact form submit error:', err);
-      setStatus({
-        type: 'error',
-        msg: 'Errore nell’invio. Riprova tra poco oppure contattami direttamente via email o telefono.',
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Timeout minimo per permettere all'utente di leggere il messaggio prima dell'apertura del client
+    setTimeout(() => {
+      window.location.href = mailtoLink;
+      setIsRedirecting(false);
+    }, 1000);
   };
 
   return (
@@ -164,7 +138,7 @@ const Contact: React.FC = () => {
                     </label>
                     <input
                       required
-                      disabled={isSubmitting}
+                      disabled={isRedirecting}
                       type="text"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -178,7 +152,7 @@ const Contact: React.FC = () => {
                     </label>
                     <input
                       required
-                      disabled={isSubmitting}
+                      disabled={isRedirecting}
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -193,7 +167,7 @@ const Contact: React.FC = () => {
                     Interesse per
                   </label>
                   <select
-                    disabled={isSubmitting}
+                    disabled={isRedirecting}
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className="w-full px-5 py-4 bg-[#F9F6F1] border border-[#EBE7E0] rounded-2xl outline-none focus:border-[#D68C70] focus:ring-2 focus:ring-[#D68C70]/5 transition-all appearance-none disabled:opacity-50"
@@ -212,7 +186,7 @@ const Contact: React.FC = () => {
                   </label>
                   <textarea
                     required
-                    disabled={isSubmitting}
+                    disabled={isRedirecting}
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -224,22 +198,22 @@ const Contact: React.FC = () => {
                 <div className="space-y-4">
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isRedirecting}
                     className={`w-full py-5 bg-[#4A3F35] text-white rounded-2xl font-semibold flex items-center justify-center gap-3 transition-all transform shadow-xl shadow-[#4A3F35]/10 
                       ${
-                        isSubmitting
+                        isRedirecting
                           ? 'opacity-70 cursor-not-allowed'
                           : 'hover:bg-[#3A322A] hover:scale-[1.02] active:scale-[0.98]'
                       }`}
                   >
-                    {isSubmitting ? (
+                    {isRedirecting ? (
                       <>
                         <Loader2 className="w-5 h-5 animate-spin" />
-                        Invio in corso...
+                        Apertura client email...
                       </>
                     ) : (
                       <>
-                        Invia Richiesta <Send className="w-5 h-5" />
+                        Invia tramite Email <Send className="w-5 h-5" />
                       </>
                     )}
                   </button>
@@ -248,11 +222,11 @@ const Contact: React.FC = () => {
                     <div
                       className={`p-4 rounded-xl text-sm font-medium animate-fade-in-up flex items-start gap-3 ${
                         status.type === 'success'
-                          ? 'bg-green-50 text-green-700 border border-green-100'
+                          ? 'bg-blue-50 text-blue-700 border border-blue-100'
                           : 'bg-red-50 text-red-700 border border-red-100'
                       }`}
                     >
-                      <div className="shrink-0 mt-0.5">{status.type === 'success' ? '✓' : '⚠'}</div>
+                      <div className="shrink-0 mt-0.5">{status.type === 'success' ? 'ℹ' : '⚠'}</div>
                       <p>{status.msg}</p>
                     </div>
                   )}
@@ -260,7 +234,7 @@ const Contact: React.FC = () => {
 
                 <p className="text-[10px] text-center text-[#A89E92] px-4 italic leading-relaxed">
                   Inviando questo modulo acconsenti al trattamento dei dati personali secondo la normativa
-                  vigente. Riceverai una risposta al più presto.
+                  vigente. Cliccando il tasto si aprirà il tuo programma di posta elettronica per completare l'invio.
                 </p>
               </form>
             </div>
