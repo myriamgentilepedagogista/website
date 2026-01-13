@@ -119,7 +119,7 @@ const ExperiencePage: React.FC = () => {
               <div className="w-14 h-14 rounded-2xl bg-[#7B8B6F] text-white flex items-center justify-center shadow-lg shadow-[#7B8B6F]/20">
                 <Briefcase className="w-7 h-7" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-serif text-[#4A3F35]">Esperienze di Coordinamento e Consulenza</h2>
+              <h2 className="text-3xl md:text-4xl font-serif text-[#4A3F35]">Esperienze Professionali Complete</h2>
             </div>
 
             <div className="space-y-20">
@@ -127,16 +127,14 @@ const ExperiencePage: React.FC = () => {
               <div>
                 <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#D68C70] mb-8 flex items-center gap-4">
                   <div className="h-px w-12 bg-[#D68C70]/30"></div>
-                  Servizi Educativi 0-6 anni
+                  Coordinamento Pedagogico e Supervisione
                 </h4>
                 <div className="space-y-10 pl-4 md:pl-8 border-l border-[#EBE7E0] ml-2">
-                  <p className="text-[#6B5E51] mb-6 font-light">
-                    Svolgo attività di <strong>Coordinatrice Pedagogica e Supervisora</strong> presso diversi nidi d'infanzia comunali e privati a Loreto, Monte San Giusto, Porto Sant'Elpidio e Corridonia, occupandomi della qualità del progetto educativo e della formazione del personale.
-                  </p>
                   {[
-                    { date: "Ott 2025 – Presente", desc: "Coordinatrice Nido 'Il Cucciolo' - Loreto (Ancona)." },
-                    { date: "Mar 2025 – Presente", desc: "Coordinatrice Nido 'Raggio di Sole' - Monte San Giusto (Macerata)." },
-                    { date: "Set 2021 – Presente", desc: "Supervisione Nido 'Bimboland' - Corridonia." }
+                    { date: "Ott 2025 – Presente", desc: "Coordinatrice Pedagogica e Supervisora presso Nido d'infanzia comunale 'Il Cucciolo' di Loreto (Ancona)." },
+                    { date: "Mar 2025 – Presente", desc: "Coordinatrice Pedagogica e Supervisora presso Nido d'infanzia comunale 'Raggio di Sole' (Lacerenza Multiservice S.r.l.) di Monte San Giusto (Macerata)." },
+                    { date: "Ott 2023 – Lug 2024", desc: "Coordinatrice Pedagogica e Supervisora presso Nido d'infanzia comunale 'L'isola che non c'è' (Coop. Soc. PARS Onlus) di Porto Sant'Elpidio (Fermo)." },
+                    { date: "Set 2021 – Presente", desc: "Coordinatrice Pedagogica e Supervisora presso Nido d'infanzia 'Bimboland' (Corridonia)." }
                   ].map((job, idx) => (
                     <div key={idx} className="relative">
                       <div className="absolute top-1.5 left-[-21px] md:left-[-37px] w-3.5 h-3.5 rounded-full bg-[#7B8B6F] border-2 border-white shadow-sm"></div>
@@ -151,16 +149,66 @@ const ExperiencePage: React.FC = () => {
               <div>
                 <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#D68C70] mb-8 flex items-center gap-4">
                   <div className="h-px w-12 bg-[#D68C70]/30"></div>
-                  Progetti Scolastici e PNRR
+                  Progetti Scolastici, PNRR e Formazione
                 </h4>
                 <div className="space-y-10 pl-4 md:pl-8 border-l border-[#EBE7E0] ml-2">
                   <div className="relative">
                     <div className="absolute top-1.5 left-[-21px] md:left-[-37px] w-3.5 h-3.5 rounded-full bg-[#D68C70] border-2 border-white"></div>
                     <p className="font-bold text-[#4A3F35] mb-1">2023 – 2025</p>
                     <p className="text-[#6B5E51] font-light leading-relaxed">
-                      Esperta Esterna PNRR per attività di <strong>Mentoring e Orientamento</strong> presso diversi Istituti Comprensivi e Superiori (Mogliano, San Severino Marche, Civitanova Marche, Grottammare). Un intervento focalizzato sul contrasto alla dispersione scolastica attraverso la pedagogia della motivazione.
+                      Esperta Esterna PNRR per attività di <strong>Mentoring, Orientamento e Formazione Famiglie</strong> presso diversi Istituti: I.C. Giovanni XXIII Mogliano, I.C. Tacchi Venturi San Severino Marche, I.I.S. Bonifazi Corridoni di Civitanova Marche, I.I.S. Fazzini Mercantini di Grottammare.
                     </p>
                   </div>
+                  <div className="relative">
+                    <div className="absolute top-1.5 left-[-21px] md:left-[-37px] w-3.5 h-3.5 rounded-full bg-[#EBE7E0] border-2 border-white"></div>
+                    <p className="font-bold text-[#4A3F35] mb-1">2024</p>
+                    <p className="text-[#6B5E51] font-light leading-relaxed">
+                      Formatrice e Relatrice in eventi territoriali: Workshop "I DSA a scuola", Laboratori "Pronti per le medie", Seminari "Aperitivi Pedagogici" e "Io Sono la Gioia" (APS Cosmofamily e CAG Corridonia).
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Category 3: Tutoraggio */}
+              <div>
+                <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#D68C70] mb-8 flex items-center gap-4">
+                  <div className="h-px w-12 bg-[#D68C70]/30"></div>
+                  Tutoraggio Specialistico BES/DSA
+                </h4>
+                <div className="space-y-10 pl-4 md:pl-8 border-l border-[#EBE7E0] ml-2">
+                  {[
+                    { date: "Feb 2024 – Mag 2025", desc: "Consulente Pedagogica e Tutor dell'Apprendimento presso Scuola Viva Aurora (Civitanova Marche)." },
+                    { date: "Ott 2022 – Dic 2024", desc: "Tutor Pedagogico Specializzato presso Università di Camerino (Servizio Accoglienza Studenti con Disabilità e DSA)." },
+                    { date: "Mar 2021 – Presente", desc: "Pedagogista e Tutor dell'Apprendimento BES e DSA presso Studio Pedagogico Privato." },
+                    { date: "Apr – Lug 2022", desc: "Tutor Didattico e Consulente di Progetto presso Cefal Emilia-Romagna." }
+                  ].map((job, idx) => (
+                    <div key={idx} className="relative">
+                      <div className="absolute top-1.5 left-[-21px] md:left-[-37px] w-3.5 h-3.5 rounded-full bg-[#4A3F35] border-2 border-white shadow-sm"></div>
+                      <p className="font-bold text-[#4A3F35] mb-1">{job.date}</p>
+                      <p className="text-[#6B5E51] font-light leading-relaxed">{job.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Category 4: Educazione Professionale */}
+              <div>
+                <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#D68C70] mb-8 flex items-center gap-4">
+                  <div className="h-px w-12 bg-[#D68C70]/30"></div>
+                  Educazione Professionale sul Campo
+                </h4>
+                <div className="space-y-10 pl-4 md:pl-8 border-l border-[#EBE7E0] ml-2">
+                  {[
+                    { date: "Feb – Lug 2022", desc: "Educatrice Domiciliare (Sostegno minori e famiglie in disagio) presso Paolo Ricci Servizi S.r.l." },
+                    { date: "Gen 2020 – Lug 2022", desc: "Educatrice Professionale presso Nidi d'infanzia comunali: 'Il Grillo Parlante' (Civitanova Marche) e 'N.Green' (Tolentino)." },
+                    { date: "Gen – Mar 2020", desc: "Educatrice per Progetto di educazione alimentare presso Associazione Culturale 'Liberalibri'." }
+                  ].map((job, idx) => (
+                    <div key={idx} className="relative">
+                      <div className="absolute top-1.5 left-[-21px] md:left-[-37px] w-3.5 h-3.5 rounded-full bg-[#EBE7E0] border-2 border-white shadow-sm"></div>
+                      <p className="font-bold text-[#4A3F35] mb-1">{job.date}</p>
+                      <p className="text-[#6B5E51] font-light leading-relaxed">{job.desc}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
