@@ -1,4 +1,4 @@
- import React from 'react';
+import React from 'react';
 import { getMeta, normalizePath } from '../seo/metadata';
 
 interface SEOProps {
@@ -110,3 +110,5 @@ const SEO: React.FC<SEOProps> = ({
     </>
   );
 };
+
+export default SEO;
