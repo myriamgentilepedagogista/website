@@ -79,7 +79,7 @@ const SEO: React.FC<SEOProps> = ({
     "sameAs": [
       "https://www.linkedin.com/in/myriam-gentile-012586196/"
     ],
-    "priceRange": "$$"
+    "priceRange"; "$$"
   };
 
   return (
