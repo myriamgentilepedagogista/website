@@ -3,7 +3,7 @@ import React from 'react';
 import { Sparkles, Scale, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const PROFILE_IMAGE_URL = "https://media.licdn.com/dms/image/v2/D4D03AQFffN7uEwAnZw/profile-displayphoto-shrink_800_800/B4DZaXRjYPGsAc-/0/1746294684622?e=1769040000&v=beta&t=IxsX1icutmnLpBNRhmsQQe5CPC7Zoiy7KGOeiuuGljU"; 
+const PROFILE_IMAGE_URL = "https://i.imgur.com/bGfsC7Y.jpeg"; 
 
 const About: React.FC = () => {
   return (
