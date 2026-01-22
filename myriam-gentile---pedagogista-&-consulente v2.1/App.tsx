@@ -1,10 +1,10 @@
-
 import React, { useState } from 'react';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import SEO from './components/SEO';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
+import WhatsAppButton from './components/WhatsAppButton';
 import { getMeta } from './seo/metadata';
 
 // Home Components
@@ -89,6 +89,7 @@ const App: React.FC = () => {
       </main>
 
       <Footer onOpenContact={openContact} />
+      <WhatsAppButton />
       <ContactModal isOpen={isContactModalOpen} onClose={closeContact} />
     </div>
   );
