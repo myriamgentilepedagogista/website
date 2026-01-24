@@ -1,33 +1,64 @@
+
+import React from 'react';
+import { Calendar, ArrowRight, Lightbulb, ShieldCheck, Brain, Target, Users, BookOpen, Heart, Sparkles, ChevronRight, GraduationCap } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+export interface Article {
+  title: string;
+  slug: string;
+  metaTitle: string;
+  metaDesc: string;
+  content: React.ReactNode;
+  excerpt: string;
+  date: string;
+}
+
+interface BlogProps {
+  onOpenContact: () => void;
+}
+
+export const articles: Article[] = [
+  {
+    title: "Quando rivolgersi a un pedagogista: i segnali fondamentali",
+    slug: "quando-rivolgersi-pedagogista",
+    metaTitle: "Quando rivolgersi a un pedagogista? Segnali per i genitori",
+    metaDesc: "Non aspettare che le fatiche diventino problemi. Scopri quando il supporto di un pedagogista è la chiave per l'equilibrio familiare.",
+    date: "15 Settembre 2024",
+    excerpt: "Spesso i genitori arrivano in consulenza quando sono esausti. Prevenire è possibile: ecco come capire quando chiedere supporto specialistico.",
+    content: (
+      <div className="space-y-10 text-lg font-light leading-relaxed">
+        <section className="bg-[#FDF4E3] p-10 rounded-[2.5rem] border-l-8 border-[#D68C70] text-[#4A3F35]">
+          <h3 className="text-2xl font-serif mb-4 italic">Oltre l'emergenza: la Pedagogia come prevenzione</h3>
+          <p className="leading-relaxed">
+            La pedagogia studia l’educazione lungo tutto l’arco della vita. Il termine deriva dal greco ‘paidos’ (bambino) e ‘agogé’ (guidare). Tuttavia, nell'immaginario comune, il pedagogista è ancora visto come una figura a cui rivolgersi solo quando 'qualcosa si è rotto'. In realtà, la pedagogia è la scienza della fisiologia dello sviluppo: interviene per ottimizzare, per dare respiro, per prevenire che una normale fatica evolutiva si trasformi in una crisi strutturale della famiglia. In questo articolo esploreremo i due segnali cardine che dovrebbero spingere un genitore a cercare un confronto professionale.
+          </p>
+        </section>
+
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">1. Lo stallo delle tappe evolutive e la crisi della comunicazione</h2>
+        <p>
+          Il primo segnale riguarda quei momenti in cui la crescita sembra "incepparsi". Ogni bambino attraversa fasi di transizione delicate: lo svezzamento, l'abbandono del pannolino, l'inserimento al nido o alla scuola dell'infanzia, fino alla gestione del sonno. Spesso queste tappe generano conflitti che, se non gestiti, diventano cronici. 
+        </p>
+        <p>
+          Il pedagogista interviene non per "aggiustare" il bambino, ma per aiutare l'adulto a decodificare il segnale. Dietro un rifiuto alimentare o un pianto inconsolabile al momento del distacco non c'è quasi mai un capriccio intenzionale, ma un bisogno evolutivo che chiede di essere visto. Attraverso la <strong>co-regolazione emotiva</strong>, insegniamo al genitore a fungere da ancora esterna per il sistema nervoso del figlio. Quando la fatica quotidiana impedisce di vedere la bellezza della relazione, la <Link to="/servizi/consulenza-genitoriale" className="text-[#D68C70] font-medium hover:underline">consulenza genitoriale</Link> diventa lo spazio per rinegoziare lo sguardo educativo.
+        </p>
+        <p>
+          Un approfondimento necessario riguarda la <strong>neuroplasticità</strong>. Il cervello infantile è in continua evoluzione e le interazioni con le figure di attaccamento modellano fisicamente le connessioni neuronali. Intervenire precocemente su uno stallo evolutivo significa proteggere lo sviluppo della salute mentale futura del bambino. Il pedagogista agisce come un "traduttore" che permette all'adulto di comprendere il linguaggio non verbale del figlio, riducendo i livelli di cortisolo (stress) nel sistema familiare e promuovendo l'ossitocina (legame).
         </p>
 
-        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">Segnale 1: Quando le tappe evolutive diventano 'stalli' emotivi</h2>
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">2. La fatica nell'apprendimento e il crollo dell'autostima</h2>
         <p>
-          Il primo grande ambito di intervento riguarda le tappe dello sviluppo che, per vari motivi, sembrano rallentare o generare un conflitto persistente. Parlo di momenti critici come il passaggio al vasino, lo svezzamento, o la gestione del sonno. Molti genitori vivono queste fasi con un senso di urgenza e ansia: 'Perché mio figlio non dorme ancora?', 'Perché rifiuta il cibo?', 'Perché ha queste reazioni così forti?'.
+          Il secondo segnale emerge con prepotenza nel contesto scolastico. Non parliamo solo di voti bassi, ma di una sofferenza profonda legata al "fare scuola". Quando un bambino o un ragazzo inizia a manifestare ansia da prestazione, evitamento dei compiti, o un senso di inadeguatezza costante ("non sono capace"), siamo di fronte a un campanello d'allarme pedagogico.
         </p>
         <p>
-          Qui interviene la neuroscienza applicata alla pedagogia. Spesso, ciò che il genitore interpreta come un 'capriccio' o una sfida intenzionale, è in realtà l'espressione di un sistema nervoso in piena maturazione. Il cervello di un bambino sotto i sei anni è dominato dal sistema limbico, la sede delle emozioni primarie, mentre la corteccia prefrontale — deputata alla regolazione e al ragionamento — è ancora in costruzione. Quando una tappa evolutiva si blocca, il pedagogista aiuta il genitore a cambiare prospettiva: non stiamo combattendo contro il bambino, ma stiamo sostenendo il suo sviluppo neurologico ed emotivo. 
+          In questi casi, il focus si sposta sulla <strong>metacognizione</strong>. Molti studenti con DSA (Dislessia, Discalculia, ecc.) o BES vivono l'esperienza scolastica come una serie ininterrotta di fallimenti. Il pedagogista clinico lavora per scardinare la cosiddetta "impotenza appresa", ovvero quella convinzione di non poter cambiare gli esiti dei propri sforzi. Attraverso il <Link to="/servizi/tutoraggio-specialistico" className="text-[#D68C70] font-medium hover:underline">tutoraggio specialistico</Link>, non ci limitiamo a trasmettere contenuti, ma costruiamo un metodo di studio basato sui punti di forza individuali. 
         </p>
         <p>
-          In consulenza, non diamo 'ricette' universali (che non esistono), ma costruiamo insieme una narrazione diversa del comportamento del bambino. Se la gestione del quotidiano è diventata un campo di battaglia, il mio percorso di <Link to="/servizi/consulenza-genitoriale" className="text-[#D68C70] hover:underline">Supporto Genitoriale</Link> offre strumenti per trasformare lo scontro in incontro, abbassando i livelli di cortisolo (l'ormone dello stress) in tutta la famiglia e favorendo la produzione di ossitocina, l'ormone del legame.
-        </p>
-
-        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">Segnale 2: La fatica nell'inserimento e nell'identità scolastica</h2>
-        <p>
-          Il secondo segnale inequivocabile riguarda il rapporto con l'istituzione scolastica e, più profondamente, con l'idea di apprendimento. Non parlo solo del brutto voto o della difficoltà in matematica, ma di un cambiamento nell'atteggiamento del bambino o del ragazzo verso la conoscenza. L'evitamento, l'ansia da prestazione, il rifiuto di andare a scuola o la sensazione di 'non essere all'altezza' sono segnali che richiedono uno sguardo pedagogico urgente.
-        </p>
-        <p>
-          I passaggi scolastici — dal nido alla materna, dalla primaria alla secondaria — sono veri e propri 'riti di passaggio' che mettono a nudo le fragilità individuali. In queste fasi, <Link to="/blog/supporto-pedagogico-bambini-adolescenti" className="text-[#D68C70] font-medium hover:underline">il supporto per adolescenti</Link> e pre-adolescenti diventa cruciale. Spesso il disinteresse per lo studio nasconde una profonda fatica organizzativa o una mancata conoscenza del proprio stile di apprendimento. Se un ragazzo non ha un metodo efficace, ogni compito diventa una montagna insormontabile, alimentando un circolo vizioso di fallimento e frustrazione (la cosiddetta 'impotenza appresa').
-        </p>
-        <p>
-          Come pedagogista, intervengo per restituire al ragazzo il senso di autoefficacia. Lavoriamo sulle funzioni esecutive — pianificazione, memoria di lavoro, inibizione della risposta — non per 'addestrare' lo studente, ma per renderlo libero e autonomo. Se sospetti che dietro la fatica scolastica ci siano disturbi specifici o semplicemente un metodo da affinare, il mio <Link to="/servizi/tutoraggio-specialistico" className="text-[#D68C70] font-medium hover:underline">Tutoraggio Specialistico</Link> è il percorso ideale per ritrovare la gioia di imparare. L'obiettivo finale non è la pagella, ma la costruzione di una solida identità di apprendimento che il ragazzo porterà con sé per tutta la vita.
+          L'adolescenza amplifica questi segnali. Il passaggio alle scuole medie o superiori rappresenta un salto cognitivo enorme: si passa dal pensiero concreto a quello astratto, e le <strong>funzioni esecutive</strong> (pianificazione, memoria di lavoro, inibizione) vengono messe a dura prova. Se il ragazzo non è supportato nel trovare la propria strada, la scuola smette di essere un luogo di scoperta e diventa un luogo di dolore. Rivolgersi a un pedagogista significa prevenire la dispersione scolastica e garantire il diritto al successo formativo, valorizzando l'originalità di ogni mente.
         </p>
 
-        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">Conclusione: Scegliere la Meraviglia</h2>
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">Conclusione: Il coraggio di chiedere aiuto</h2>
         <p>
-          Accorgersi di questi segnali e decidere di affrontarli con un professionista è un atto di coraggio e di amore immenso. Significa non accontentarsi di sopravvivere alla giornata, ma voler abitare la relazione con i propri figli in modo pieno e luminoso. La pedagogia della meraviglia, che porto avanti nel mio studio di <Link to="/#contact" className="text-[#D68C70] hover:underline">Civitanova Marche</Link>, parte proprio da qui: dalla convinzione che in ogni fatica si nasconda una risorsa preziosa che aspetta solo di essere vista, riconosciuta e nutrita. 
-        </p>
-        <p>
-          Non aspettare che il segnale diventi un grido di allarme. La consulenza pedagogica è un tempo che regali a te stesso e alla tua famiglia per tornare a respirare insieme. Iniziamo questo viaggio?
+          Educare è un atto politico e sociale, oltre che privato. Chiedere una consulenza non è un'ammissione di fallimento, ma un atto di estrema responsabilità. Significa scegliere di non subire la crescita, ma di abitarla con consapevolezza. La pedagogia della meraviglia è proprio questo: la capacità di vedere la risorsa dove altri vedono solo il limite. Se ti riconosci in questi segnali, il mio studio di <Link to="/#contact" className="text-[#D68C70] hover:underline">Civitanova Marche</Link> è pronto ad accoglierti per tracciare insieme una nuova rotta.
         </p>
       </div>
     )
@@ -35,66 +66,157 @@
   {
     title: "Pedagogista, psicologo ed educatore: come scegliere?",
     slug: "pedagogista-psicologo-educatore-differenze",
-    metaTitle: "Pedagogista, psicologo o educatore? Ecco chi scegliere e perché",
-    metaDesc: "Confusione tra le figure educative? Scopri le differenze tra pedagogista, psicologo ed educatore.",
+    metaTitle: "Pedagogista, psicologo o educatore? Differenze e Scelta",
+    metaDesc: "Guida completa per distinguere le figure professionali dell'aiuto. Scopri a chi rivolgerti per il benessere di tuo figlio.",
     date: "28 Settembre 2024",
     excerpt: "Spesso si confondono i ruoli. Fare chiarezza sulle differenze professionali è fondamentale per indirizzare correttamente il bisogno.",
     content: (
-      <div className="space-y-8">
-        <p className="bg-[#FDF4E3] p-6 rounded-2xl border-l-4 border-[#D68C70] text-[#4A3F35] font-medium leading-relaxed">
-          Scegliere la figura corretta significa dare a tuo figlio il vestito professionale più adatto alla sua crescita.
+      <div className="space-y-10 text-lg font-light leading-relaxed">
+        <section className="bg-[#F0F4EE] p-10 rounded-[2.5rem] border-l-8 border-[#7B8B6F] text-[#4A3F35]">
+          <h3 className="text-2xl font-serif mb-4 italic">Un'identità professionale chiara (L. 55/2024)</h3>
+          <p className="leading-relaxed">
+            Per decenni le professioni educative hanno vissuto in una zona grigia. Oggi, grazie alla Legge 15 aprile 2024 n. 55, la figura del <strong>Pedagogista</strong> ha finalmente un riconoscimento giuridico forte come professione di livello apicale. Capire chi fa cosa è il primo passo per non sprecare tempo e risorse economiche in percorsi non idonei.
+          </p>
+        </section>
+
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">Il Pedagogista: L'esperto dei processi formativi</h2>
+        <p>
+          Il pedagogista è lo specialista che si occupa dei processi educativi, della formazione e dell'apprendimento in ogni fase della vita. Non lavora sulla "malattia" o sul disturbo psichico (ambito dello psicologo), ma sulla <strong>fisiologia della relazione</strong> e sul potenziamento delle risorse. Il suo sguardo è sistemico: osserva il bambino, la famiglia, la scuola e l'ambiente sociale come un tutt'uno interconnesso.
         </p>
-        <h2 className="text-3xl font-serif text-[#4A3F35] mt-12 mb-6">Il Pedagogista: l'architetto del potenziale</h2>
-        <p>Il pedagogista è lo specialista dei processi formativi. Non fa diagnosi cliniche ma lavora sulla relazione e sul metodo. Se tuo figlio vive una fatica legata ai DSA, scopri come il mio <Link to="/servizi/tutoraggio-specialistico" className="text-[#D68C70] font-medium hover:underline">Tutoraggio Specialistico</Link> può fare la differenza.</p>
-        <h2 className="text-3xl font-serif text-[#4A3F35] mt-12 mb-6">Guida rapida alla scelta</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-[#F9F6F1] p-6 rounded-3xl">
-            <h4 className="font-bold mb-2">Pedagogista</h4>
-            <p className="text-sm">Consulenza genitoriale, metodo di studio, coordinamento servizi 0-6. Scopri i miei <Link to="/servizi" className="text-[#D68C70] hover:underline">servizi pedagogici</Link>.</p>
+        <p>
+          In ambito clinico-pedagogico, il pedagogista interviene per prevenire e trattare il disagio educativo. Se tuo figlio ha una diagnosi di DSA o BES, il pedagogista è la figura che progetta il <Link to="/servizi/tutoraggio-specialistico" className="text-[#D68C70] font-medium hover:underline">piano di intervento educativo</Link>, aiutandolo a trovare strumenti compensativi e strategie di studio efficaci. Collabora con le scuole e coordina i servizi educativi, garantendo che il progetto pedagogico sia coerente e di qualità.
+        </p>
+
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">Lo Psicologo: Focus sulla salute mentale</h2>
+        <p>
+          Lo psicologo interviene quando siamo di fronte a una sofferenza psichica, a disturbi del comportamento, dell'umore o della personalità. La sua formazione gli permette di effettuare diagnosi cliniche e, se psicoterapeuta, di condurre percorsi di cura profonda del trauma o della patologia. Se un bambino manifesta fobie gravi, attacchi di panico o sintomi depressivi, lo psicologo è la figura di riferimento primaria.
+        </p>
+        <p>
+          Spesso pedagogista e psicologo collaborano in modo complementare (multidisciplinarità). Ad esempio, in caso di ADHD, lo psicologo può occuparsi della valutazione diagnostica e del supporto terapeutico, mentre il pedagogista lavora sul campo per strutturare l'ambiente di apprendimento e supportare i genitori nella gestione educativa quotidiana.
+        </p>
+
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">L'Educatore: La professionalità dell'agire quotidiano</h2>
+        <p>
+          L'Educatore Professionale Socio-Pedagogico è la figura che opera direttamente "in trincea". È colui che attua gli interventi progettati dal pedagogista. Lo troviamo nei nidi, nelle comunità, nell'assistenza domiciliare o scolastica. La sua forza è la <strong>quotidianità</strong>: condivide con l'utente spazi e tempi reali, utilizzando la relazione diretta come strumento di cambiamento.
+        </p>
+
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">Guida alla scelta: A chi rivolgersi?</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+          <div className="bg-white p-8 rounded-3xl border border-[#EBE7E0] shadow-sm">
+            <h4 className="font-bold text-[#4A3F35] mb-4">Pedagogista</h4>
+            <ul className="text-sm space-y-2 opacity-80">
+              <li>• Difficoltà di studio e metodo</li>
+              <li>• Supporto alla genitorialità</li>
+              <li>• Coordinamento servizi 0-6</li>
+              <li>• Disorientamento educativo</li>
+            </ul>
           </div>
-          <div className="bg-[#F9F6F1] p-6 rounded-3xl">
-            <h4 className="font-bold mb-2">Psicologo</h4>
-            <p className="text-sm">Disturbi d'ansia, depressione, diagnosi cliniche, supporto post-traumatico.</p>
+          <div className="bg-white p-8 rounded-3xl border border-[#EBE7E0] shadow-sm">
+            <h4 className="font-bold text-[#4A3F35] mb-4">Psicologo</h4>
+            <ul className="text-sm space-y-2 opacity-80">
+              <li>• Sintomi ansiosi o depressivi</li>
+              <li>• Diagnosi neuropsicologiche</li>
+              <li>• Elaborazione del lutto/trauma</li>
+              <li>• Disturbi della personalità</li>
+            </ul>
+          </div>
+          <div className="bg-white p-8 rounded-3xl border border-[#EBE7E0] shadow-sm">
+            <h4 className="font-bold text-[#4A3F35] mb-4">Educatore</h4>
+            <ul className="text-sm space-y-2 opacity-80">
+              <li>• Supporto compiti quotidiano</li>
+              <li>• Assistenza in sezione (Nido)</li>
+              <li>• Interventi domiciliari</li>
+              <li>• Animazione socio-culturale</li>
+            </ul>
           </div>
         </div>
+        <p className="mt-8">
+          Compresa la differenza, è importante ricordare che un buon professionista sa quando inviare l'utente a un altro collega. Se hai dubbi sulla situazione di tuo figlio, un primo colloquio informativo nel mio studio di <Link to="/servizi" className="text-[#D68C70] hover:underline">Civitanova Marche</Link> può aiutarti a fare chiarezza.
+        </p>
       </div>
     )
   },
   {
     title: "Supporto pedagogico per bambini e adolescenti: quando serve?",
     slug: "supporto-pedagogico-bambini-adolescenti",
-    metaTitle: "Supporto pedagogico per bambini e adolescenti: quando serve?",
-    metaDesc: "Scopri come un supporto pedagogico specialistico aiuta a superare fatiche scolastiche e crisi di crescita.",
+    metaTitle: "Supporto pedagogico per bambini e adolescenti: Guida Completa",
+    metaDesc: "Dalle elementari alle superiori: scopri come un supporto pedagogico specialistico potenzia l'autonomia e l'autostima.",
     date: "22 Ottobre 2024",
     excerpt: "L'infanzia e l'adolescenza sono cantieri aperti. Scopri come sostenere lo sviluppo armonico e l'autonomia.",
     content: (
-      <div className="space-y-8">
-        <p>Accompagnare un figlio è un viaggio meraviglioso. Quando sorgono ostacoli, il supporto specialistico interviene come alleato.</p>
-        <h2 className="text-3xl font-serif text-[#4A3F35] mt-12 mb-6">Il valore del Tutoraggio Specialistico (DSA e BES)</h2>
-        <p>Il pedagogista non offre \"ripetizioni\". Offre strumenti compensativi. Se vuoi approfondire questo ambito, visita la pagina dedicata al <Link to="/servizi/tutoraggio-specialistico" className="text-[#D68C70] font-medium hover:underline">Tutoraggio Pedagogico DSA e BES</Link>. Lavorare tempestivamente significa favorire una salute mentale solida, un valore che porto avanti nel mio studio di <Link to="/#contact" className="text-[#D68C70] hover:underline">Civitanova Marche</Link>.</p>
+      <div className="space-y-10 text-lg font-light leading-relaxed">
+        <section className="bg-[#EBE7E0]/30 p-10 rounded-[2.5rem] border-l-8 border-[#4A3F35] text-[#4A3F35]">
+          <h3 className="text-2xl font-serif mb-4 italic">Crescere: un'avventura non lineare</h3>
+          <p className="leading-relaxed">
+            Ogni fase dello sviluppo porta con sé sfide specifiche. Il supporto pedagogico non è un "parcheggio" per bambini difficili, ma un laboratorio di autonomia dove si apprende a navigare nel mare della complessità. Dalla scuola primaria fino al diploma, il ruolo del pedagogista è quello di facilitatore di processi, un alleato silenzioso ma presente.
+          </p>
+        </section>
+
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">Bambini (6-10 anni): Le fondamenta del sapere</h2>
+        <p>
+          Nella scuola primaria, il bambino costruisce le basi della propria identità di studente. È qui che si manifestano le prime fatiche legate alla letto-scrittura o al calcolo. Un intervento pedagogico tempestivo in questa fase può fare la differenza tra un bambino che ama imparare e uno che si sente "sbagliato".
+        </p>
+        <p>
+          Lavoriamo molto sulla <strong>consapevolezza fonologica</strong>, sulla grafomotricità e sull'approccio ludico all'apprendimento. Ma soprattutto, lavoriamo sulle emozioni legate all'errore. Insegniamo ai bambini che l'errore non è un fallimento, ma un'informazione preziosa per il cervello. Questo approccio è fondamentale per chi ha un <Link to="/servizi/tutoraggio-specialistico" className="text-[#D68C70] font-medium hover:underline">Tutoraggio Specialistico</Link> in corso, dove la motivazione è spesso fragile.
+        </p>
+
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">Preadolescenti e Adolescenti (11-18 anni): La ricerca di senso</h2>
+        <p>
+          Con l'arrivo della scuola media, il carico cognitivo aumenta vertiginosamente. Gli studenti devono imparare a gestire più insegnanti, più materie e una mole di studio che richiede <strong>funzioni esecutive</strong> solide. Spesso i ragazzi si sentono schiacciati dalla pianificazione o dalla difficoltà di sintetizzare concetti complessi.
+        </p>
+        <p>
+          Il supporto pedagogico in adolescenza si trasforma in un affiancamento strategico. Insegniamo l'uso delle mappe concettuali, l'ascolto attivo e l'organizzazione del tempo. Ma andiamo oltre: supportiamo il ragazzo nella costruzione della sua <strong>autoefficacia</strong>. Un adolescente che sa di avere gli strumenti per affrontare un'interrogazione è un ragazzo più sereno, meno incline all'ansia scolastica e più propenso a esplorare i propri talenti.
+        </p>
+        <p>
+          Inoltre, non possiamo ignorare l'impatto del digitale. Parte del supporto pedagogico moderno riguarda l'<strong>educazione ai media</strong> e l'uso consapevole degli strumenti compensativi digitali (sintesi vocale, software di mappatura). Questi non devono essere visti come "facilitazioni", ma come protesi cognitive che permettono allo studente di esprimere il suo reale potenziale, superando la barriera del disturbo specifico.
+        </p>
+
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">Il ruolo della famiglia: Non siamo soli</h2>
+        <p>
+          Ogni percorso con il minore prevede momenti di confronto con i genitori. Non si può cambiare il percorso di un ragazzo senza coinvolgere il sistema in cui vive. Insieme, analizziamo i PDP (Piani Didattici Personalizzati) e cerchiamo di uniformare lo stile comunicativo tra casa e scuola. Se desideri un supporto per tuo figlio a <Link to="/#contact" className="text-[#D68C70] hover:underline">Civitanova Marche</Link>, il mio studio offre percorsi individualizzati che mettono al centro il benessere del ragazzo e la serenità dei genitori.
+        </p>
       </div>
     )
   },
   {
     title: "Che cosa fa un pedagogista, in pratica?",
     slug: "cosa-fa-un-pedagogista",
-    metaTitle: "Cosa fa il pedagogista? Ecco come aiuta famiglie e bambini",
-    metaDesc: "Capire cosa fa il pedagogista in pratica è il primo passo per migliorare l'educazione dei tuoi figli.",
+    metaTitle: "Cosa fa il pedagogista? Attività, Contesti e Metodologia",
+    metaDesc: "Oltre la teoria: scopri l'agire pratico del pedagogista in famiglia, a scuola e nelle istituzioni.",
     date: "12 Giugno 2024",
     excerpt: "“Ah, quindi… che cosa fai, in pratica?”. Una domanda semplice che merita una risposta chiara.",
     content: (
-      <div className="space-y-8">
-        <p>Il pedagogista è un professionista della relazione educativa. Il suo agire attraversa diverse generazioni e contesti, come puoi vedere nella mia sezione <Link to="/esperienza" className="text-[#D68C70] hover:underline">Esperienza e Curriculum</Link>.</p>
-        <div className="grid grid-cols-1 gap-6 mt-8">
-          <div className="bg-[#F9F6F1] p-8 rounded-3xl">
-            <h3 className="text-2xl font-serif text-[#4A3F35] mb-4">Servizi per genitori</h3>
-            <p className="text-sm">Strumenti concreti per sostenere lo sviluppo. Vedi il dettaglio della <Link to="/servizi/consulenza-genitoriale" className="text-[#D68C70] hover:underline">Consulenza Genitoriale</Link>.</p>
-          </div>
-          <div className="bg-[#F9F6F1] p-8 rounded-3xl">
-            <h3 className="text-2xl font-serif text-[#4A3F35] mb-4">Servizi per scuole</h3>
-            <p className="text-sm">Coordinamento e supervisione. Vedi il dettaglio del <Link to="/servizi/coordinamento-pedagogico" className="text-[#D68C70] hover:underline">Coordinamento 0-6</Link>.</p>
-          </div>
-        </div>
+      <div className="space-y-10 text-lg font-light leading-relaxed">
+        <section className="bg-[#4A3F35] p-10 rounded-[2.5rem] text-white">
+          <h3 className="text-2xl font-serif mb-4 italic text-white/90">Il Pedagogista: un regista delle relazioni</h3>
+          <p className="leading-relaxed opacity-90">
+            Immaginate un regista che non sta sul palco, ma dietro le quinte, assicurandosi che ogni attore (genitore, insegnante, educatore) abbia il copione giusto e la luce migliore per recitare la propria parte. Il pedagogista progetta, monitora e valuta interventi educativi. Non "intrattiene" i bambini, ma costruisce contesti in cui i bambini possano fiorire.
+          </p>
+        </section>
+
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">In Studio: La Consulenza Individuale</h2>
+        <p>
+          Nella pratica quotidiana dello studio privato, il pedagogista effettua colloqui clinico-pedagogici. Utilizziamo l'osservazione, il colloquio narrativo e strumenti di screening non diagnostici per mappare la situazione. Progettiamo percorsi di <strong>Parent Training</strong> dove insegniamo ai genitori tecniche di gestione dei comportamenti difficili o strategie per favorire l'autonomia.
+        </p>
+        <p>
+          Per i ragazzi, l'attività pratica si declina nel potenziamento cognitivo e nel tutoraggio. Non facciamo "compiti", ma laboratori di <strong>metodo di studio</strong>. Questo significa analizzare come il ragazzo legge, come memorizza, come organizza il diario e il tempo libero. Potete trovare maggiori dettagli nella pagina dedicata ai <Link to="/servizi" className="text-[#D68C70] hover:underline">miei servizi</Link>.
+        </p>
+
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">Nelle Scuole e nei Nidi: Il Coordinamento</h2>
+        <p>
+          Il pedagogista è spesso un <strong>Coordinatore</strong>. In pratica, questo significa osservare le educatrici in sezione, condurre riunioni di equipe, redigere il Progetto Educativo del servizio e gestire le relazioni delicate con le famiglie. Il coordinatore garantisce che il nido non sia un semplice "luogo di custodia", ma un luogo di educazione intenzionale.
+        </p>
+        <p>
+          Negli ultimi tempi, la mia pratica si è estesa ai progetti <strong>PNRR</strong>. Qui il pedagogista lavora come esperto esterno per combattere la dispersione scolastica, attivando percorsi di mentoring per studenti fragili e formazione per i docenti. È un lavoro di rete continuo che richiede competenze negoziali e una profonda conoscenza del sistema scolastico italiano. Se sei un dirigente scolastico, puoi consultare la mia <Link to="/esperienza" className="text-[#D68C70] hover:underline">esperienza professionale completa</Link> in questo ambito.
+        </p>
+
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">La formazione e la supervisione</h2>
+        <p>
+          Infine, il pedagogista è un formatore. Organizzo workshop per genitori ("Aperitivi Pedagogici") e corsi di aggiornamento per professionisti. La supervisione pedagogica è un'altra attività pratica fondamentale: aiuto i team educativi a riflettere sul proprio operato, a sciogliere i nodi conflittuali interni e a ritrovare il senso profondo della propria missione educativa.
+        </p>
+        <p>
+          In sintesi, l'agire pedagogico è un agire trasformativo. Non ci accontentiamo di osservare la realtà, ma lavoriamo costantemente per migliorarla, un passo educativo alla volta. Ti aspetto nel mio studio a <Link to="/#contact" className="text-[#D68C70] hover:underline">Civitanova Marche</Link> per scoprire cosa possiamo fare, in pratica, per la tua situazione.
+        </p>
       </div>
     )
   }
