@@ -1,50 +1,34 @@
-
-import React from 'react';
-import { Calendar, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-
-export interface Article {
-  title: string;
-  slug: string;
-  metaTitle: string;
-  metaDesc: string;
-  content: React.ReactNode;
-  excerpt: string;
-  date: string;
-}
-
-interface BlogProps {
-  onOpenContact: () => void;
-}
-
-export const articles: Article[] = [
-  {
-    title: "Quando rivolgersi a un pedagogista: 7 segnali chiari",
-    slug: "quando-rivolgersi-pedagogista",
-    metaTitle: "Quando rivolgersi a un pedagogista? 7 segnali per i genitori",
-    metaDesc: "Non aspettare che le fatiche diventino problemi. Scopri quando rivolgersi a un pedagogista per ritrovare equilibrio.",
-    date: "15 Settembre 2024",
-    excerpt: "Spesso i genitori arrivano in consulenza quando sono esausti. Prevenire è possibile: ecco come capire quando chiedere supporto.",
-    content: (
-      <div className="space-y-8">
-        <p className="bg-[#FDF4E3] p-6 rounded-2xl border-l-4 border-[#D68C70] text-[#4A3F35] font-medium leading-relaxed">
-          La pedagogia studia l’educazione lungo tutto l’arco della vita. <br />
-          Il termine deriva dal greco ‘paidos’ (bambino) e ‘agogé’ (guidare).
         </p>
-        <p>Incontrare una fatica educativa non significa aver fallito. Al contrario, accorgersi che le dinamiche familiari si sono appesantite è il primo atto di cura. Se cerchi un supporto diretto, puoi approfondire il mio servizio di <Link to="/servizi/consulenza-genitoriale" className="text-[#D68C70] font-medium hover:underline">consulenza genitoriale specialistica</Link>.</p>
-        <h2 className="text-3xl font-serif text-[#4A3F35] mt-12 mb-6">Il pedagogista: l'expert della normalità</h2>
-        <p>C’è un malinteso: l'idea che si debba andare dallo specialista solo per la patologia. La pedagogia si occupa della fisiologia della crescita. È utile capire <Link to="/blog/pedagogista-psicologo-educatore-differenze" className="text-[#D68C70] font-medium hover:underline">la differenza tra pedagogista e psicologo</Link> per comprendere che il supporto pedagogico non è una terapia, ma un potenziamento delle risorse.</p>
-        <h2 className="text-3xl font-serif text-[#4A3F35] mt-12 mb-6">7 Situazioni in cui il supporto pedagogico fa la differenza</h2>
-        <div className="space-y-6">
-          <div className="bg-[#F9F6F1] p-8 rounded-3xl">
-            <h3 className="text-xl font-bold mb-3">1. Difficoltà nelle tappe evolutive primarie</h3>
-            <p>Sonno frammentato, passaggio al vasino o svezzamento difficile. Per questi temi, il mio percorso di <Link to="/servizi/consulenza-genitoriale" className="text-[#D68C70] hover:underline">Supporto Genitoriale</Link> offre chiavi di lettura concrete.</p>
-          </div>
-          <div className="bg-[#F9F6F1] p-8 rounded-3xl">
-            <h3 className="text-xl font-bold mb-3">2. Fatiche nell'inserimento scolastico</h3>
-            <p>I passaggi scolastici sono momenti di fragilità. <Link to="/blog/supporto-pedagogico-bambini-adolescenti" className="text-[#D68C70] font-medium hover:underline">Il supporto per adolescenti</Link> è cruciale per prevenire l'ansia da prestazione.</p>
-          </div>
-        </div>
+
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">Segnale 1: Quando le tappe evolutive diventano 'stalli' emotivi</h2>
+        <p>
+          Il primo grande ambito di intervento riguarda le tappe dello sviluppo che, per vari motivi, sembrano rallentare o generare un conflitto persistente. Parlo di momenti critici come il passaggio al vasino, lo svezzamento, o la gestione del sonno. Molti genitori vivono queste fasi con un senso di urgenza e ansia: 'Perché mio figlio non dorme ancora?', 'Perché rifiuta il cibo?', 'Perché ha queste reazioni così forti?'.
+        </p>
+        <p>
+          Qui interviene la neuroscienza applicata alla pedagogia. Spesso, ciò che il genitore interpreta come un 'capriccio' o una sfida intenzionale, è in realtà l'espressione di un sistema nervoso in piena maturazione. Il cervello di un bambino sotto i sei anni è dominato dal sistema limbico, la sede delle emozioni primarie, mentre la corteccia prefrontale — deputata alla regolazione e al ragionamento — è ancora in costruzione. Quando una tappa evolutiva si blocca, il pedagogista aiuta il genitore a cambiare prospettiva: non stiamo combattendo contro il bambino, ma stiamo sostenendo il suo sviluppo neurologico ed emotivo. 
+        </p>
+        <p>
+          In consulenza, non diamo 'ricette' universali (che non esistono), ma costruiamo insieme una narrazione diversa del comportamento del bambino. Se la gestione del quotidiano è diventata un campo di battaglia, il mio percorso di <Link to="/servizi/consulenza-genitoriale" className="text-[#D68C70] hover:underline">Supporto Genitoriale</Link> offre strumenti per trasformare lo scontro in incontro, abbassando i livelli di cortisolo (l'ormone dello stress) in tutta la famiglia e favorendo la produzione di ossitocina, l'ormone del legame.
+        </p>
+
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">Segnale 2: La fatica nell'inserimento e nell'identità scolastica</h2>
+        <p>
+          Il secondo segnale inequivocabile riguarda il rapporto con l'istituzione scolastica e, più profondamente, con l'idea di apprendimento. Non parlo solo del brutto voto o della difficoltà in matematica, ma di un cambiamento nell'atteggiamento del bambino o del ragazzo verso la conoscenza. L'evitamento, l'ansia da prestazione, il rifiuto di andare a scuola o la sensazione di 'non essere all'altezza' sono segnali che richiedono uno sguardo pedagogico urgente.
+        </p>
+        <p>
+          I passaggi scolastici — dal nido alla materna, dalla primaria alla secondaria — sono veri e propri 'riti di passaggio' che mettono a nudo le fragilità individuali. In queste fasi, <Link to="/blog/supporto-pedagogico-bambini-adolescenti" className="text-[#D68C70] font-medium hover:underline">il supporto per adolescenti</Link> e pre-adolescenti diventa cruciale. Spesso il disinteresse per lo studio nasconde una profonda fatica organizzativa o una mancata conoscenza del proprio stile di apprendimento. Se un ragazzo non ha un metodo efficace, ogni compito diventa una montagna insormontabile, alimentando un circolo vizioso di fallimento e frustrazione (la cosiddetta 'impotenza appresa').
+        </p>
+        <p>
+          Come pedagogista, intervengo per restituire al ragazzo il senso di autoefficacia. Lavoriamo sulle funzioni esecutive — pianificazione, memoria di lavoro, inibizione della risposta — non per 'addestrare' lo studente, ma per renderlo libero e autonomo. Se sospetti che dietro la fatica scolastica ci siano disturbi specifici o semplicemente un metodo da affinare, il mio <Link to="/servizi/tutoraggio-specialistico" className="text-[#D68C70] font-medium hover:underline">Tutoraggio Specialistico</Link> è il percorso ideale per ritrovare la gioia di imparare. L'obiettivo finale non è la pagella, ma la costruzione di una solida identità di apprendimento che il ragazzo porterà con sé per tutta la vita.
+        </p>
+
+        <h2 className="text-4xl font-serif text-[#4A3F35] mt-16 mb-8">Conclusione: Scegliere la Meraviglia</h2>
+        <p>
+          Accorgersi di questi segnali e decidere di affrontarli con un professionista è un atto di coraggio e di amore immenso. Significa non accontentarsi di sopravvivere alla giornata, ma voler abitare la relazione con i propri figli in modo pieno e luminoso. La pedagogia della meraviglia, che porto avanti nel mio studio di <Link to="/#contact" className="text-[#D68C70] hover:underline">Civitanova Marche</Link>, parte proprio da qui: dalla convinzione che in ogni fatica si nasconda una risorsa preziosa che aspetta solo di essere vista, riconosciuta e nutrita. 
+        </p>
+        <p>
+          Non aspettare che il segnale diventi un grido di allarme. La consulenza pedagogica è un tempo che regali a te stesso e alla tua famiglia per tornare a respirare insieme. Iniziamo questo viaggio?
+        </p>
       </div>
     )
   },
