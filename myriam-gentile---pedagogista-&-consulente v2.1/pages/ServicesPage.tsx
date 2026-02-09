@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowLeft, Users2, BriefcaseBusiness, Brain, CheckCircle2, Info, ChevronRight, ArrowUpRight, HelpCircle, ArrowRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
@@ -8,7 +7,7 @@ import { getMeta } from '../seo/metadata';
 const ServicesPage: React.FC = () => {
   const location = useLocation();
   const meta = getMeta(location.pathname);
-  const siteUrl = "https://www.myriamgentilepedagogista.com";
+  const siteUrl = "https://myriamgentilepedagogista.com";
 
   const servicesSchema = {
     "@context": "https://schema.org",
