@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Users2, ArrowLeft, Brain, ArrowRight, ChevronRight, Sparkles, Plus, Minus, HelpCircle, BookOpen, Heart, Lightbulb, Compass, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -10,7 +9,7 @@ interface PageProps {
 
 const ConsulenzaGenitorialePage: React.FC<PageProps> = ({ onOpenContact }) => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const siteUrl = "https://www.myriamgentilepedagogista.com";
+  const siteUrl = "https://myriamgentilepedagogista.com";
   
   const faqData = [
     {
