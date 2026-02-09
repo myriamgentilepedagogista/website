@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Brain, ArrowLeft, Target, Zap, ArrowRight, Sparkles, ChevronRight, HelpCircle, Plus, Minus, Info, ClipboardList, PenTool, TrendingUp, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -10,7 +9,7 @@ interface PageProps {
 
 const TutoraggioSpecialisticoPage: React.FC<PageProps> = ({ onOpenContact }) => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const siteUrl = "https://www.myriamgentilepedagogista.com";
+  const siteUrl = "https://myriamgentilepedagogista.com";
 
   const faqData = [
     {
@@ -139,7 +138,7 @@ const TutoraggioSpecialisticoPage: React.FC<PageProps> = ({ onOpenContact }) => 
                   </div>
                   <div>
                     <h4 className="font-bold text-[#4A3F35]">Strumenti Compensativi</h4>
-                    <p className="text-sm">Affiancare il ragazzo nell'uso consapevole dei software e degli strumenti previsti dal PDP (Piano Didattico Personalizzato).</p>
+                    <p className="text-sm">Affiancare le ragazzo nell'uso consapevole dei software e degli strumenti previsti dal PDP (Piano Didattico Personalizzato).</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
