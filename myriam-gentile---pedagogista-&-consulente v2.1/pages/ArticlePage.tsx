@@ -12,7 +12,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ onOpenContact }) => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const article = articles.find(a => a.slug === slug);
-  const siteUrl = "https://www.myriamgentilepedagogista.com";
+  const siteUrl = "https://myriamgentilepedagogista.com";
 
   useEffect(() => {
     window.scrollTo(0, 0);
