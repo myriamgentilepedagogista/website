@@ -10,7 +10,7 @@ const PROFILE_IMAGE_URL = "https://i.imgur.com/bGfsC7Y.jpeg";
 const AboutPage: React.FC = () => {
   const location = useLocation();
   const meta = getMeta(location.pathname);
-  const siteUrl = "https://www.myriamgentilepedagogista.com";
+  const siteUrl = "https://myriamgentilepedagogista.com";
 
   const personSchema = {
     "@context": "https://schema.org",
@@ -97,7 +97,7 @@ const AboutPage: React.FC = () => {
               <section>
                 <h2 className="text-3xl font-serif text-[#4A3F35] mb-4">Pedagogia e Neuroscienze</h2>
                 <p>
-                  Perché questo binomio? Le neuroscienze ci offrono oggi chiavi di lettura fondamentali per comprendere come funziona il cervello in crescita, come nascono le emozioni e come si apprende. La pedagogia, d'altro canto, ci insegna come tradurre queste scoperte in una relazione educativa efficace, calda e rispettosa.
+                  Perché questo binomio? Le neuroscienze ci offrono oggi chiavi di lettura fondamentali per comprendere come funziona le cervello in crescita, come nascono le emozioni e come si apprende. La pedagogia, d'altro canto, ci insegna come tradurre queste scoperte in una relazione educativa efficace, calda e rispettosa.
                 </p>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                   {[
