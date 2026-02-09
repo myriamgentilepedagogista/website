@@ -17,7 +17,7 @@ const SEO: React.FC<SEOProps> = ({
   ogImage = "https://media.licdn.com/dms/image/v2/D4D03AQFffN7uEwAnZw/profile-displayphoto-shrink_800_800/B4DZaXRjYPGsAc-/0/1746294684622?e=1769040000&v=beta&t=IxsX1icutmnLpBNRhmsQQe5CPC7Zoiy7KGOeiuuGljU"
 }) => {
   const siteName = "Myriam Gentile Pedagogista";
-  const siteUrl = "https://www.myriamgentilepedagogista.com";
+  const siteUrl = "https://myriamgentilepedagogista.com";
   const personId = `${siteUrl}/chi-sono#person`;
   const businessId = `${siteUrl}/#business`;
 
