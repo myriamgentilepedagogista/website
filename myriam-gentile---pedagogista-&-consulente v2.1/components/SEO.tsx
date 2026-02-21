@@ -105,7 +105,7 @@ const SEO: React.FC<SEOProps> = ({
   };
 
   // 2. WebPage Schema (Specific for the current URL)
-  const pageType = logicalPath === "/chi-sono" ? "AboutPage" : logicalPath === "/faq" ? "FAQPage" : "WebPage";
+  const pageType = logicalPath === "/chi-sono" ? "AboutPage" : "WebPage";
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": pageType,
