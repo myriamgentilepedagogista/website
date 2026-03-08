@@ -162,27 +162,79 @@ const SEO: React.FC<SEOProps> = ({
     ]
   };
 
+  // Use effect to update document head tags
+  React.useEffect(() => {
+    document.title = headTitle;
+    
+    // Update Meta Description
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.setAttribute('name', 'description');
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.setAttribute('content', finalDescription);
+
+    // Update Canonical
+    if (!isPreview && canonicalUrl) {
+      let linkCanonical = document.querySelector('link[rel="canonical"]');
+      if (!linkCanonical) {
+        linkCanonical = document.createElement('link');
+        linkCanonical.setAttribute('rel', 'canonical');
+        document.head.appendChild(linkCanonical);
+      }
+      linkCanonical.setAttribute('href', canonicalUrl);
+    }
+
+    // Update OG Tags
+    const updateOgTag = (property: string, content: string) => {
+      let tag = document.querySelector(`meta[property="${property}"]`);
+      if (!tag) {
+        tag = document.createElement('meta');
+        tag.setAttribute('property', property);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute('content', content);
+    };
+
+    updateOgTag('og:type', finalOgType);
+    updateOgTag('og:url', absoluteUrl);
+    updateOgTag('og:title', headTitle);
+    updateOgTag('og:description', finalDescription);
+    updateOgTag('og:image', ogImage);
+    updateOgTag('og:site_name', siteName);
+
+    // Update Twitter Tags
+    const updateTwitterTag = (name: string, content: string) => {
+      let tag = document.querySelector(`meta[name="${name}"]`);
+      if (!tag) {
+        tag = document.createElement('meta');
+        tag.setAttribute('name', name);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute('content', content);
+    };
+
+    updateTwitterTag('twitter:card', 'summary_large_image');
+    updateTwitterTag('twitter:url', absoluteUrl);
+    updateTwitterTag('twitter:title', headTitle);
+    updateTwitterTag('twitter:description', finalDescription);
+    updateTwitterTag('twitter:image', ogImage);
+
+    // Handle Robots
+    if (isPreview) {
+      let robots = document.querySelector('meta[name="robots"]');
+      if (!robots) {
+        robots = document.createElement('meta');
+        robots.setAttribute('name', 'robots');
+        document.head.appendChild(robots);
+      }
+      robots.setAttribute('content', 'noindex, nofollow');
+    }
+  }, [headTitle, finalDescription, canonicalUrl, isPreview, absoluteUrl, finalOgType, ogImage, siteName]);
+
   return (
     <>
-      <title>{headTitle}</title>
-      <meta name="description" content={finalDescription} />
-      
-      {isPreview && <meta name="robots" content="noindex, nofollow" />}
-      {!isPreview && canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-
-      <meta property="og:type" content={finalOgType} />
-      <meta property="og:url" content={absoluteUrl} />
-      <meta property="og:title" content={headTitle} />
-      <meta property="og:description" content={finalDescription} />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content={siteName} />
-
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={absoluteUrl} />
-      <meta name="twitter:title" content={headTitle} />
-      <meta name="twitter:description" content={finalDescription} />
-      <meta name="twitter:image" content={ogImage} />
-
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
