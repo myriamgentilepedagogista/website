@@ -58,11 +58,11 @@ const Services: React.FC = () => {
             title="Per Educatrici"
             desc="Supporto professionale per rafforzare l'identità educativa e la gestione delle dinamiche di gruppo."
             items={[
-              "Consulenza pedagogica professionale",
-              "Educatrici e insegnanti dei servizi 0-6 anni",
-              "Lettura delle dinamiche educative",
-              "Rafforzamento del ruolo in sezione",
-              "Sviluppo dell'autonomia decisionale"
+              "Sostegno alla qualità educativa",
+              "Supervisione del lavoro educativo",
+              "Supporto al gruppo di lavoro",
+              "Osservazione e progettazione pedagogica",
+              "Relazione con le famiglie"
             ]}
             icon={<BriefcaseBusiness className="w-7 h-7 text-[#FFFFFF]" />}
             iconColor="bg-[#55634A]"
