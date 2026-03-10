@@ -86,7 +86,7 @@ const AboutPage: React.FC = () => {
               <section>
                 <h2 className="text-3xl font-serif text-[#4A3F35] mb-4">L'Approccio Meraki</h2>
                 <p>
-                  Mettere l'anima, la creatività e l'amore in ciò che si fa: questa è l'essenza di <strong>Meraki</strong>. Nel mio lavoro come pedagogista, questo si traduce in un ascolto profondo e in un'attention costante all'unicità di ogni persona, bambino o adulto che sia.
+                  Mettere l'anima, la creatività e l'amore in ciò che si fa: questa è l'essenza di <strong>Meraki</strong>. Nel mio lavoro come pedagogista, questo si traduce in un ascolto profondo e in un'attenzione costante all'unicità di ogni persona, bambino o adulto che sia.
                 </p>
                 <p>
                   Il mio obiettivo è integrare la solidità delle <strong>neuroscienze</strong> con la sensibilità della <strong>pedagogia della relazione</strong>, offrendo strumenti concreti per trasformare le fatiche educative in opportunità di crescita consapevole.
@@ -96,7 +96,7 @@ const AboutPage: React.FC = () => {
               <section>
                 <h2 className="text-3xl font-serif text-[#4A3F35] mb-4">Pedagogia e Neuroscienze</h2>
                 <p>
-                  Perché questo binomio? Le neuroscienze ci offrono oggi chiavi di lettura fondamentali per comprendere come funziona le cervello in crescita, come nascono le emozioni e come si apprende. La pedagogia, d'altro canto, ci insegna come tradurre queste scoperte in una relazione educativa efficace, calda e rispettosa.
+                  Perché questo binomio? Le neuroscienze ci offrono oggi chiavi di lettura fondamentali per comprendere come funziona il cervello in crescita, come nascono le emozioni e come si apprende. La pedagogia, d'altro canto, ci insegna come tradurre queste scoperte in una relazione educativa efficace, calda e rispettosa.
                 </p>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                   {[
