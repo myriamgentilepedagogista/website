@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://myriamgentilepedagogista.com/sitemap.xml
+llms: https://myriamgentilepedagogista.com/llms.txt
