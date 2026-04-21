@@ -1,0 +1,16 @@
+export const articleIsoDateBySlug: Record<string, string> = {
+  "bambino-che-non-ascolta-cosa-fare-senza-urlare": "2026-04-18",
+  "capricci-nei-bambini-cause-come-gestirli": "2026-04-07",
+  "uso-cellulare-bambini-limiti-rischi-regole": "2026-03-21",
+  "ansia-nei-bambini-segnali-come-aiutarli": "2026-03-09",
+  "difficolta-a-scuola-quando-preoccuparsi": "2026-02-28",
+  "come-migliorare-autostima-bambini-strategie": "2026-02-14",
+  "bambini-aggressivi-perche-succede-come-intervenire": "2026-02-06",
+  "inserimento-scolastico-difficile-come-aiutare": "2026-01-27",
+  "litigi-tra-fratelli-come-gestirli": "2026-01-18",
+  "genitori-oggi-errori-educativi-comuni": "2026-01-03",
+  "quando-rivolgersi-pedagogista": "2024-09-15",
+  "pedagogista-psicologo-educatore-differenze": "2024-09-28",
+  "supporto-pedagogico-bambini-adolescenti": "2024-10-22",
+  "cosa-fa-un-pedagogista": "2024-06-12",
+};
