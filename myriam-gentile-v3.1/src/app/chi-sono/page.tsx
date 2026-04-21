@@ -2,6 +2,8 @@ import React from 'react';
 import { Sparkles, Scale, Heart, Quote, ChevronRight, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd';
+import Image from 'next/image';
 
 const PROFILE_IMAGE_URL = "/Myriam-Gentile-Chi-Sono.png"; 
 
@@ -47,6 +49,10 @@ export default function AboutPage() {
   return (
     <div className="pt-32 pb-24 bg-[#FDFBF7] min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: `${siteUrl}/` },
+        { name: 'Chi Sono', url: `${siteUrl}/chi-sono` }
+      ]} />
       <div className="container mx-auto px-6">
         <nav className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#A89E92] mb-8" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-[#D68C70] transition-colors">Home</Link>
@@ -57,11 +63,12 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
-              <img 
+              <Image
                 src={PROFILE_IMAGE_URL} 
                 alt="Dott.ssa Myriam Gentile - Pedagogista e Coordinatrice a Civitanova Marche" 
-                width="800"
-                height="800"
+                width={1600}
+                height={1066}
+                sizes="(max-width: 1023px) 100vw, 50vw"
                 className="w-full h-full object-cover" 
               />
             </div>

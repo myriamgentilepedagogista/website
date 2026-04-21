@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 
 const projects = [
   {
@@ -60,13 +61,13 @@ const ProjectsCarousel: React.FC = () => {
                 className={`absolute inset-0 transition-all duration-700 ease-in-out transform ${i === current ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}
                 style={{ transform: `translateX(${(i - current) * 100}%)` }}
               >
-                <img 
+                <Image
                   src={project.image} 
                   alt={`Immagine del progetto: ${project.title}`} 
                   width={project.width}
                   height={project.height}
+                  sizes="(max-width: 767px) 100vw, 1200px"
                   loading="lazy"
-                  decoding="async"
                   className="w-full h-full object-cover" 
                 />
               </div>

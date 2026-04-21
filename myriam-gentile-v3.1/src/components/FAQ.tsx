@@ -88,6 +88,7 @@ const FAQ: React.FC<FAQProps> = ({ onOpenContact }) => {
               >
                 <button
                   onClick={() => toggleFAQ(index)}
+                  aria-expanded={openIndex === index}
                   className="w-full px-8 py-7 flex items-center justify-between text-left focus:outline-none"
                 >
                   <span className={`text-lg md:text-xl font-serif transition-colors ${

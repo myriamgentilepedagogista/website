@@ -2,6 +2,8 @@
 import React from 'react';
 import { Calendar, ArrowRight, Lightbulb, ShieldCheck, Brain, Target, Users, BookOpen, Heart, Sparkles, ChevronRight, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
+import { articles2026 } from './Blog2026Articles';
+import { articleIsoDateBySlug } from './articleDates';
 
 export interface Article {
   title: string;
@@ -18,6 +20,7 @@ interface BlogProps {
 }
 
 export const articles: Article[] = [
+  ...articles2026,
   {
     title: "Quando rivolgersi a un pedagogista: i segnali fondamentali",
     slug: "quando-rivolgersi-pedagogista",
@@ -232,7 +235,7 @@ const Blog: React.FC<BlogProps> = ({ onOpenContact }) => {
       "@type": "BlogPosting",
       "headline": article.title,
       "description": article.excerpt,
-      "datePublished": article.date,
+      "datePublished": articleIsoDateBySlug[article.slug] || article.date,
       "author": { "@type": "Person", "name": "Myriam Gentile" }
     }))
   };

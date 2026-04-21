@@ -2,6 +2,7 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface HeroProps {
   onOpenContact: () => void;
@@ -52,11 +53,14 @@ const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             {/* Image on mobile: under the title */}
             <div className="lg:hidden w-full mb-10 animate-fade-in-up">
               <div className="relative max-w-[340px] mx-auto">
-                <img 
+                <Image
                   src={MYRIAM_IMAGE_URL} 
                   alt="Myriam Gentile - Pedagogista" 
+                  width={1524}
+                  height={1536}
+                  priority
+                  sizes="(max-width: 1023px) 340px, 45vw"
                   className="w-full h-auto object-contain"
-                  referrerPolicy="no-referrer"
                 />
               </div>
             </div>
@@ -84,11 +88,14 @@ const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           {/* Image on desktop: on the right */}
           <div className="hidden lg:block lg:w-[45%] order-2 animate-fade-in-up">
             <div className="relative max-w-2xl ml-auto">
-              <img 
+              <Image
                 src={MYRIAM_IMAGE_URL} 
                 alt="Myriam Gentile - Pedagogista" 
+                width={1524}
+                height={1536}
+                priority
+                sizes="45vw"
                 className="w-full h-auto object-contain scale-110 origin-right"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-[#B15E41]/10 to-transparent rounded-full blur-3xl -z-10" />
             </div>

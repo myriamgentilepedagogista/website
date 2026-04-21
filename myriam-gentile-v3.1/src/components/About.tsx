@@ -2,6 +2,7 @@
 import React from 'react';
 import { Sparkles, Scale, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const PROFILE_IMAGE_URL = "/Myriam-Gentile-Chi-Sono.png"; 
 
@@ -12,13 +13,14 @@ const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
             <div className="relative z-10 aspect-[4/5] max-w-md mx-auto">
-              <img 
+              <Image
                 src={PROFILE_IMAGE_URL} 
                 alt="Ritratto professionale di Myriam Gentile - Pedagogista a Civitanova Marche" 
-                width="800"
-                height="800"
+                width={1600}
+                height={1066}
                 loading="eager"
-                fetchPriority="high"
+                priority
+                sizes="(max-width: 1023px) 100vw, 50vw"
                 decoding="async"
                 className="relative z-10 rounded-[3rem] w-full h-full object-cover shadow-2xl border-4 border-white"
               />

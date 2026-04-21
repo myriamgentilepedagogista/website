@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X } from 'lucide-react';
 
 interface LegalModalProps {
@@ -10,6 +10,17 @@ interface LegalModalProps {
 }
 
 const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, title, content }) => {
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
@@ -18,11 +29,17 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, title, content
         className="fixed inset-0 bg-[#4A3F35]/40 backdrop-blur-sm transition-opacity" 
         onClick={onClose}
       ></div>
-      <div className="relative bg-white w-full max-w-2xl rounded-[2.5rem] shadow-2xl flex flex-col max-h-[90vh] overflow-hidden border border-[#EBE7E0] animate-fade-in-up">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="legal-modal-title"
+        className="relative bg-white w-full max-w-2xl rounded-[2.5rem] shadow-2xl flex flex-col max-h-[90vh] overflow-hidden border border-[#EBE7E0] animate-fade-in-up"
+      >
         <div className="flex items-center justify-between p-8 border-b border-[#F3F0E9]">
-          <h3 className="text-2xl font-serif text-[#4A3F35]">{title}</h3>
+          <h3 id="legal-modal-title" className="text-2xl font-serif text-[#4A3F35]">{title}</h3>
           <button 
             onClick={onClose}
+            aria-label="Chiudi"
             className="p-2 hover:bg-[#F9F6F1] rounded-full transition-colors text-[#A89E92] hover:text-[#4A3F35]"
           >
             <X className="w-6 h-6" />

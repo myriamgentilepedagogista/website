@@ -1,27 +1,77 @@
-'use client';
-
-import React, { useEffect } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import React from 'react';
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { ArrowLeft, BookOpen, ChevronRight, Calendar, ArrowUpRight, Headphones, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { articles } from '../../../components/Blog';
-import { useContact } from '../../../context/ContactContext';
+import ArticleContactButton from '../../../components/ArticleContactButton';
+import { articleFaqSchemaBySlug } from '../../../components/articleFaqSchema';
+import BreadcrumbJsonLd from '../../../components/BreadcrumbJsonLd';
+import { articleIsoDateBySlug } from '../../../components/articleDates';
 
-export default function ArticlePage() {
-  const params = useParams();
-  const slug = params.slug as string;
-  const router = useRouter();
-  const article = articles.find(a => a.slug === slug);
-  const { openContact } = useContact();
+type ArticlePageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+const siteUrl = "https://myriamgentilepedagogista.com";
+
+function getArticle(slug: string) {
+  return articles.find(a => a.slug === slug);
+}
+
+export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const article = getArticle(slug);
+
+  if (!article) {
+    return {
+      title: 'Articolo non trovato | Myriam Gentile',
+      alternates: {
+        canonical: `${siteUrl}/blog`,
+      },
+    };
+  }
+
+  const url = `${siteUrl}/blog/${article.slug}`;
+  const publishedTime = articleIsoDateBySlug[article.slug] || article.date;
+
+  return {
+    title: article.metaTitle || article.title,
+    description: article.metaDesc || article.excerpt,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: article.metaTitle || article.title,
+      description: article.metaDesc || article.excerpt,
+      url,
+      siteName: 'Myriam Gentile Pedagogista',
+      locale: 'it_IT',
+      type: 'article',
+      publishedTime,
+      authors: ['Myriam Gentile'],
+    },
+    twitter: {
+      card: 'summary',
+      title: article.metaTitle || article.title,
+      description: article.metaDesc || article.excerpt,
+    },
+  };
+}
+
+export function generateStaticParams() {
+  return articles.map((article) => ({
+    slug: article.slug,
+  }));
+}
+
+export default async function ArticlePage({ params }: ArticlePageProps) {
+  const { slug } = await params;
+  const article = getArticle(slug);
   const siteUrl = "https://myriamgentilepedagogista.com";
+  const isoDate = article ? articleIsoDateBySlug[article.slug] || article.date : undefined;
 
-  useEffect(() => {
-    if (!article) {
-      router.replace('/blog');
-    }
-  }, [article, router]);
-
-  if (!article) return null;
+  if (!article) notFound();
 
   // BlogPosting Schema
   const blogPostingSchema = {
@@ -29,41 +79,39 @@ export default function ArticlePage() {
     "@type": "BlogPosting",
     "headline": article.title,
     "description": article.excerpt,
-    "datePublished": article.date,
+    "datePublished": isoDate,
+    "dateModified": isoDate,
     "author": { "@id": `${siteUrl}/chi-sono#person` },
     "publisher": { "@id": `${siteUrl}/#business` },
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `${siteUrl}/blog/${article.slug}`
     },
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "xpath": [
-        "/html/head/title",
-        "/html/meta[@name='description']/@content"
-      ]
-    }
   };
 
   // Dinamic FAQ Schema for Articles that answer questions
-  const articleFAQSchema = article.slug.includes('quando') || article.slug.includes('differenze') ? {
+  const structuredFaqs = articleFaqSchemaBySlug[article.slug];
+  const articleFAQSchema = structuredFaqs ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-      {
+    "mainEntity": structuredFaqs.map((faq) => ({
         "@type": "Question",
-        "name": article.title,
+        "name": faq.question,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": article.excerpt
+          "text": faq.answer
         }
-      }
-    ]
+    }))
   } : null;
 
   return (
     <div className="pt-32 pb-24 bg-[#FDFBF7] min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }} />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: `${siteUrl}/` },
+        { name: 'Blog', url: `${siteUrl}/blog` },
+        { name: article.title, url: `${siteUrl}/blog/${article.slug}` }
+      ]} />
       {articleFAQSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleFAQSchema) }} />
       )}
@@ -126,12 +174,7 @@ export default function ArticlePage() {
                 <p className="text-[#4A3F35] font-serif text-3xl mb-2">Myriam Gentile</p>
                 <p className="text-xs uppercase tracking-widest text-[#A89E92]">Pedagogista e Coordinatrice</p>
               </div>
-              <button 
-                onClick={openContact}
-                className="px-12 py-5 bg-[#4A3F35] text-white rounded-full font-medium hover:bg-[#3A322A] transition-all transform hover:-translate-y-1 shadow-xl"
-              >
-                Parliamone insieme
-              </button>
+              <ArticleContactButton />
             </div>
           </article>
 

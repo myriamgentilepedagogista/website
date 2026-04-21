@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { HelpCircle, Plus, Minus, ChevronRight, ArrowRight, MessageCircle, Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { useContact } from '../../context/ContactContext';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd';
 
 export default function FAQPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -72,6 +73,10 @@ export default function FAQPage() {
   return (
     <div className="pt-32 pb-24 bg-[#FDFBF7] min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: `${siteUrl}/` },
+        { name: 'FAQ', url: `${siteUrl}/faq` }
+      ]} />
       <div className="container mx-auto px-6">
         <nav className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#A89E92] mb-8" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-[#D68C70] transition-colors">Home</Link>
@@ -98,6 +103,7 @@ export default function FAQPage() {
                     <div key={qIdx} className="bg-white border border-[#EBE7E0] rounded-[2rem] overflow-hidden">
                       <button 
                         onClick={() => setOpenFaq(openFaq === globalIdx ? null : globalIdx)}
+                        aria-expanded={openFaq === globalIdx}
                         className="w-full px-8 py-6 flex items-center justify-between text-left"
                       >
                         <span className="font-serif text-lg text-[#4A3F35]">{item.q}</span>
@@ -141,11 +147,11 @@ export default function FAQPage() {
                 </div>
                 <span className="text-lg font-light">+39 345 2291697</span>
               </a>
-              <a href="mailto:gentilemyriam@gmail.com" className="flex items-center gap-4 text-[#6B5E51] hover:text-[#D68C70] transition-colors group">
+              <a href="mailto:myriamgentilepedagogista@outlook.it" className="flex items-center gap-4 text-[#6B5E51] hover:text-[#D68C70] transition-colors group">
                 <div className="w-10 h-10 rounded-full bg-[#FDFBF7] flex items-center justify-center border border-[#F3F0E9] group-hover:border-[#D68C70]/20">
                   <Mail className="w-5 h-5" />
                 </div>
-                <span className="text-lg font-light">gentilemyriam@gmail.com</span>
+                <span className="text-lg font-light">myriamgentilepedagogista@outlook.it</span>
               </a>
             </div>
           </div>

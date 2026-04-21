@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X } from 'lucide-react';
 
 interface ContactModalProps {
@@ -8,6 +8,17 @@ interface ContactModalProps {
 }
 
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
@@ -19,11 +30,16 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
       ></div>
 
       {/* Simplified Container with requested background color #fbede2 */}
-      <div className="relative bg-[#fbede2] w-full max-w-[580px] h-full md:h-auto md:max-h-[90vh] md:rounded-[2.5rem] shadow-[0_50px_100px_-20px_rgba(74,63,53,0.3)] flex flex-col overflow-hidden animate-fade-in-up border border-white/50">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contact-modal-title"
+        className="relative bg-[#fbede2] w-full max-w-[580px] h-full md:h-auto md:max-h-[90vh] md:rounded-[2.5rem] shadow-[0_50px_100px_-20px_rgba(74,63,53,0.3)] flex flex-col overflow-hidden animate-fade-in-up border border-white/50"
+      >
         
         {/* Simple Header */}
         <div className="relative p-6 md:p-8 flex items-center justify-between border-b border-[#4A3F35]/10 bg-[#fbede2]">
-          <h3 className="text-2xl md:text-3xl font-serif text-[#4A3F35]">Iniziamo un percorso</h3>
+          <h3 id="contact-modal-title" className="text-2xl md:text-3xl font-serif text-[#4A3F35]">Iniziamo un percorso</h3>
           <button 
             onClick={onClose}
             className="p-2 hover:bg-[#4A3F35]/5 rounded-full transition-all text-[#4A3F35]/60 hover:text-[#4A3F35]"

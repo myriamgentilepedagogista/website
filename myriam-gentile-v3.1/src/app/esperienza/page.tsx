@@ -2,6 +2,7 @@ import React from 'react';
 import { GraduationCap, Briefcase, Award, BookOpen, ChevronRight, ArrowUpRight, CheckCircle2, Star } from 'lucide-react';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Esperienza e Formazione | Dott.ssa Myriam Gentile',
@@ -13,6 +14,130 @@ export const metadata: Metadata = {
 
 export default function ExperiencePage() {
   const siteUrl = "https://myriamgentilepedagogista.com";
+  const education = [
+    {
+      year: "2023",
+      title: "Laurea Magistrale in Scienze Pedagogiche (LM-85)",
+      org: "Università degli Studi di Macerata",
+      desc: "Votazione 110/110 con Lode. Curriculum: Pedagogia della disabilità e marginalità. Tesi in Filosofia dell'educazione."
+    },
+    {
+      year: "2021",
+      title: "Laurea in Scienze dell'Educazione e della formazione (L-19)",
+      org: "Università degli Studi di Macerata",
+      desc: "Votazione 106/110. Curriculum: Educatore di nido e comunità infantili."
+    },
+    {
+      year: "Diploma",
+      title: "Diploma di maturità socio psico-pedagogica",
+      org: 'Liceo "A.G. Roncalli", Manfredonia (FG)',
+      desc: "Votazione 80/100."
+    }
+  ];
+
+  const specialistCourses = [
+    "Saper stare nei conflitti sul lavoro (Novara - CPP)",
+    "Study Empowerment for Inclusion (Unimc)",
+    "Trattamento DSA (Centro Studi Erickson)",
+    "Parent Training: percorsi di sostegno (Erickson)",
+    "Consulenza Pedagogica Genitoriale (S.I.P.P.)",
+    "Facilitatrice Mindfulness (Mindfulness Educators)",
+    "Esperta in Orientamento Scolastico (ASNOR)",
+    "Women Empowerment (ASNOR)",
+    "Tutor per alunni con difficoltà e DSA (S.I.P.P.)",
+    "Coordinamento Psicopedagogico 0-6 (S.I.P.P.)",
+    "Volontari nei centri antiviolenza (SOS Donna)",
+    "La relazione con le famiglie (Ambito n.15)",
+    "Buone pratiche sociali contro la discriminazione (Unimc)"
+  ];
+
+  const professionalExperience = [
+    {
+      category: "Coordinamento Pedagogico e Supervisione",
+      items: [
+        {
+          period: "Ott 2025 – Presente",
+          role: 'Coordinatrice Pedagogica e Supervisora presso Nido d\'infanzia comunale "Il Cucciolo"',
+          org: "Loreto (Ancona)"
+        },
+        {
+          period: "Mar 2025 – Presente",
+          role: 'Coordinatrice Pedagogica e Supervisora presso Nido d\'infanzia comunale "Raggio di Sole" (Lacerenza Multiservice S.r.l.)',
+          org: "Monte San Giusto (Macerata)"
+        },
+        {
+          period: "Ott 2023 – Lug 2024",
+          role: 'Coordinatrice Pedagogica e Supervisora presso Nido d\'infanzia comunale "L\'isola che non c\'è" (Coop. Soc. PARS Onlus)',
+          org: "Porto Sant'Elpidio (Fermo)"
+        },
+        {
+          period: "Set 2021 – Presente",
+          role: 'Coordinatrice Pedagogica e Supervisora presso Nido d\'infanzia "Bimboland"',
+          org: "Corridonia"
+        }
+      ]
+    },
+    {
+      category: "Progetti PNRR & Formazione",
+      items: [
+        {
+          period: "2023 – 2025",
+          role: "Esperta Esterna PNRR per il Mentoring, l'Orientamento e la Formazione Famiglie",
+          org: "I.C. Giovanni XXIII Mogliano, I.C. Tacchi Venturi San Severino, I.I.S. Bonifazi Corridoni di Civitanova Marche, I.I.S. Fazzini Mercantini di Grottammare"
+        },
+        {
+          period: "2024",
+          role: 'Formatrice e Relatrice: Workshop "I DSA a scuola", Laboratori "Pronti per le medie", Seminari "Aperitivi Pedagogici" e "Io Sono la Gioia"',
+          org: "APS Cosmofamily e CAG Corridonia"
+        }
+      ]
+    },
+    {
+      category: "Tutoraggio Specialistico BES/DSA",
+      items: [
+        {
+          period: "Feb 2024 – Mag 2025",
+          role: "Consulente Pedagogica e Tutor dell'Apprendimento",
+          org: "Scuola Viva Aurora, Civitanova Marche"
+        },
+        {
+          period: "Ott 2022 – Dic 2024",
+          role: "Tutor Pedagogico Specializzato",
+          org: "Università di Camerino, Servizio Accoglienza Studenti con Disabilità e DSA"
+        },
+        {
+          period: "Mar 2021 – Presente",
+          role: "Pedagogista e Tutor dell'Apprendimento BES e DSA",
+          org: "Studio Pedagogico Privato"
+        },
+        {
+          period: "Apr – Lug 2022",
+          role: "Tutor Didattico e Consulente di Progetto",
+          org: "Cefal Emilia-Romagna"
+        }
+      ]
+    },
+    {
+      category: "Educazione Professionale",
+      items: [
+        {
+          period: "Feb – Lug 2022",
+          role: "Educatrice Domiciliare, sostegno minori e famiglie in disagio",
+          org: "Paolo Ricci Servizi S.r.l."
+        },
+        {
+          period: "Gen 2020 – Lug 2022",
+          role: 'Educatrice Professionale presso Nidi d\'infanzia comunali "Il Grillo Parlante" e "N.Green"',
+          org: "Civitanova Marche e Tolentino"
+        },
+        {
+          period: "Gen – Mar 2020",
+          role: "Educatrice per Progetto di educazione alimentare",
+          org: 'Associazione Culturale "Liberalibri"'
+        }
+      ]
+    }
+  ];
 
   const personSchema = {
     "@context": "https://schema.org",
@@ -40,6 +165,10 @@ export default function ExperiencePage() {
   return (
     <div className="pt-32 pb-24 bg-[#FDFBF7] min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: `${siteUrl}/` },
+        { name: 'Esperienza', url: `${siteUrl}/esperienza` }
+      ]} />
       <div className="container mx-auto px-6">
         <nav className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#A89E92] mb-8" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-[#D68C70] transition-colors">Home</Link>
@@ -65,26 +194,31 @@ export default function ExperiencePage() {
                 <h2 className="text-3xl font-serif text-[#4A3F35]">Formazione Accademica</h2>
               </div>
               <div className="space-y-8">
-                {[
-                  {
-                    year: "2023",
-                    title: "Laurea Magistrale in Scienze Pedagogiche",
-                    org: "Università degli Studi di Macerata",
-                    desc: "Votazione 110/110 con Lode. Tesi sperimentale sull'integrazione tra neuroscienze e prassi pedagogica."
-                  },
-                  {
-                    year: "2021",
-                    title: "Laurea in Scienze dell'Educazione e della Formazione",
-                    org: "Università degli Studi di Macerata",
-                    desc: "Focus sullo sviluppo infantile e sulle dinamiche relazionali nei contesti educativi 0-6."
-                  }
-                ].map((edu, idx) => (
+                {education.map((edu, idx) => (
                   <div key={idx} className="relative pl-8 border-l border-[#EBE7E0]">
                     <div className="absolute left-[-5px] top-0 w-[9px] h-[9px] rounded-full bg-[#D68C70]" />
                     <span className="text-xs font-bold text-[#D68C70] uppercase tracking-widest mb-2 block">{edu.year}</span>
                     <h3 className="text-xl font-serif text-[#4A3F35] mb-2">{edu.title}</h3>
                     <p className="text-sm font-medium text-[#6B5E51] mb-2">{edu.org}</p>
                     <p className="text-[#6B5E51] font-light text-sm leading-relaxed">{edu.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Specialist Training */}
+            <section>
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-12 h-12 rounded-full bg-[#D68C70]/10 flex items-center justify-center">
+                  <Award className="w-6 h-6 text-[#D68C70]" />
+                </div>
+                <h2 className="text-3xl font-serif text-[#4A3F35]">Formazione Specialistica & Corsi</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 bg-white p-8 rounded-3xl border border-[#F3F0E9] shadow-sm">
+                {specialistCourses.map((course) => (
+                  <div key={course} className="flex gap-3 text-sm text-[#6B5E51] border-b border-[#F3F0E9] pb-3">
+                    <Award className="w-4 h-4 text-[#D68C70] shrink-0 mt-0.5" />
+                    <span>{course}</span>
                   </div>
                 ))}
               </div>
@@ -99,27 +233,19 @@ export default function ExperiencePage() {
                 <h2 className="text-3xl font-serif text-[#4A3F35]">Esperienza Professionale</h2>
               </div>
               <div className="space-y-12">
-                {[
-                  {
-                    role: "Coordinatrice Pedagogica",
-                    org: "Servizi Educativi 0-3",
-                    desc: "Supervisione dei team educativi, progettazione pedagogica e monitoraggio della qualità in diversi nidi d'infanzia della provincia di Macerata."
-                  },
-                  {
-                    role: "Tutor dell'Apprendimento Specialistico",
-                    org: "Libera Professione",
-                    desc: "Supporto a ragazzi con DSA, BES e ADHD attraverso la costruzione di metodi di studio personalizzati e l'uso di strumenti compensativi."
-                  },
-                  {
-                    role: "Esperta in Progetti PNRR",
-                    org: "Istituti Scolastici",
-                    desc: "Attuazione di percorsi di mentoring e orientamento per il contrasto alla dispersione scolastica in scuole secondarie di primo e secondo grado."
-                  }
-                ].map((job, idx) => (
-                  <div key={idx} className="bg-white p-8 rounded-3xl border border-[#F3F0E9] shadow-sm hover:shadow-md transition-shadow">
-                    <h3 className="text-xl font-serif text-[#4A3F35] mb-2">{job.role}</h3>
-                    <p className="text-sm font-bold text-[#7B8B6F] uppercase tracking-widest mb-4">{job.org}</p>
-                    <p className="text-[#6B5E51] font-light leading-relaxed">{job.desc}</p>
+                {professionalExperience.map((group) => (
+                  <div key={group.category} className="bg-white p-8 rounded-3xl border border-[#F3F0E9] shadow-sm hover:shadow-md transition-shadow">
+                    <h3 className="text-xs font-bold text-[#7B8B6F] uppercase tracking-[0.2em] mb-8">{group.category}</h3>
+                    <div className="space-y-6 pl-4 border-l border-[#EBE7E0]">
+                      {group.items.map((job) => (
+                        <div key={`${job.period}-${job.role}`} className="relative pl-6">
+                          <div className="absolute top-1.5 left-[-5.5px] w-2.5 h-2.5 rounded-full bg-[#7B8B6F]" />
+                          <p className="font-bold text-[#4A3F35] mb-1">{job.period}</p>
+                          <p className="text-[#6B5E51] font-light leading-relaxed">{job.role}</p>
+                          <p className="text-sm font-medium text-[#7B8B6F] mt-2">{job.org}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>

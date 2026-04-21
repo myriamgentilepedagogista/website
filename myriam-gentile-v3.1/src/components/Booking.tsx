@@ -39,7 +39,7 @@ const Booking: React.FC = () => {
                   <p className="text-[#6B5E51]">Configurazione Calendario necessaria</p>
                 </div>
               ) : (
-                <iframe src={GOOGLE_CALENDAR_URL} style={{ border: 0 }} width="100%" height="600" frameBorder="0"></iframe>
+                <iframe src={GOOGLE_CALENDAR_URL} title="Calendario appuntamenti" style={{ border: 0 }} width="100%" height="600" frameBorder="0"></iframe>
               )}
             </div>
           </div>

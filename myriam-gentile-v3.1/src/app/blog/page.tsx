@@ -4,37 +4,18 @@ import React from 'react';
 import { BookOpen, ArrowRight, ChevronRight, Calendar, User, Clock, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import { useContact } from '../../context/ContactContext';
+import { articles } from '../../components/Blog';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd';
 
 export default function BlogPage() {
   const { openContact } = useContact();
   const siteUrl = "https://myriamgentilepedagogista.com";
 
-  const blogPosts = [
-    {
-      slug: "neuroscienze-e-pedagogia-un-binomio-necessario",
-      title: "Neuroscienze e Pedagogia: un binomio necessario per l'educazione moderna",
-      excerpt: "Perché comprendere il funzionamento del cervello è fondamentale per chi educa oggi? Esploriamo come le scoperte scientifiche supportano la relazione educativa.",
-      date: "15 Maggio 2024",
-      category: "Neuroscienze",
-      readTime: "5 min"
-    },
-    {
-      slug: "gestire-i-capricci-con-empatia",
-      title: "Oltre i 'capricci': come gestire le crisi emotive con l'approccio Meraki",
-      excerpt: "Cosa succede davvero quando un bambino urla? Strategie pratiche per trasformare un momento di crisi in un'opportunità di connessione profonda.",
-      date: "2 Maggio 2024",
-      category: "Genitorialità",
-      readTime: "7 min"
-    },
-    {
-      slug: "importanza-del-gioco-nello-sviluppo-0-6",
-      title: "L'importanza del gioco libero nello sviluppo del bambino 0-6 anni",
-      excerpt: "Il gioco non è solo divertimento, è il lavoro del bambino. Scopriamo come l'ambiente e i materiali influenzano l'apprendimento spontaneo.",
-      date: "20 Aprile 2024",
-      category: "Sviluppo Infantile",
-      readTime: "6 min"
-    }
-  ];
+  const blogPosts = articles.map((article) => ({
+    ...article,
+    category: "Pedagogia",
+    readTime: "7 min"
+  }));
 
   const collectionSchema = {
     "@context": "https://schema.org",
@@ -56,6 +37,10 @@ export default function BlogPage() {
   return (
     <div className="pt-32 pb-24 bg-[#FDFBF7] min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: `${siteUrl}/` },
+        { name: 'Blog', url: `${siteUrl}/blog` }
+      ]} />
       <div className="container mx-auto px-6">
         <nav className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#A89E92] mb-8" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-[#D68C70] transition-colors">Home</Link>

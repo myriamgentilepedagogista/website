@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { BriefcaseBusiness, ArrowLeft, ShieldCheck, Layout, Users, ArrowRight, ChevronRight, HelpCircle, Plus, Minus, GraduationCap, ClipboardCheck, BookCheck, Network } from 'lucide-react';
 import Link from 'next/link';
 import { useContact } from '../../../context/ContactContext';
+import BreadcrumbJsonLd from '../../../components/BreadcrumbJsonLd';
 
 export default function CoordinamentoPedagogicoPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -34,7 +35,7 @@ export default function CoordinamentoPedagogicoPage() {
     "provider": {
       "@type": "ProfessionalService",
       "name": "Myriam Gentile - Pedagogista",
-      "telePhone": "+39 345 2291697",
+      "telephone": "+39 345 2291697",
       "url": siteUrl,
       "address": {
         "@type": "PostalAddress",
@@ -64,6 +65,11 @@ export default function CoordinamentoPedagogicoPage() {
     <div className="pt-32 pb-24 bg-[#FDFBF7] min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: `${siteUrl}/` },
+        { name: 'Servizi', url: `${siteUrl}/servizi` },
+        { name: 'Coordinamento Pedagogico', url: `${siteUrl}/servizi/coordinamento-pedagogico` }
+      ]} />
       
       <div className="container mx-auto px-6">
         <nav className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#A89E92] mb-8" aria-label="Breadcrumb">
@@ -170,6 +176,7 @@ export default function CoordinamentoPedagogicoPage() {
                 <div key={idx} className="bg-white border border-[#EBE7E0] rounded-[2rem] overflow-hidden">
                   <button 
                     onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                    aria-expanded={openFaq === idx}
                     className="w-full px-8 py-6 flex items-center justify-between text-left"
                   >
                     <span className="font-serif text-lg text-[#4A3F35]">{item.q}</span>

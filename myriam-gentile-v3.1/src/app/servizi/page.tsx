@@ -2,6 +2,7 @@ import React from 'react';
 import { Users2, BriefcaseBusiness, Brain, CheckCircle2, ChevronRight, ArrowRight, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Servizi Pedagogici Specialistici | Myriam Gentile',
@@ -46,6 +47,10 @@ export default function ServicesPage() {
   return (
     <div className="pt-32 pb-24 bg-[#FDFBF7] min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }} />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: `${siteUrl}/` },
+        { name: 'Servizi', url: `${siteUrl}/servizi` }
+      ]} />
       <div className="container mx-auto px-6">
         <nav className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#A89E92] mb-8" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-[#B15E41] transition-colors">Home</Link>

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Headphones, ExternalLink, Play } from 'lucide-react';
+import Image from 'next/image';
 
 const PodcastSection: React.FC = () => {
   const SPOTIFY_URL = "https://open.spotify.com/episode/7q4SnctMpisJNu4kpqwoRW?si=2197RfNVRTWSApAnqQAn5w";
@@ -29,11 +30,12 @@ const PodcastSection: React.FC = () => {
       <script type="application/ld+json">{JSON.stringify(podcastSchema)}</script>
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
+        <Image
           src="https://ajjwlwiyvg6jgwre.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-05%20at%2015.31.04.jpeg" 
           alt="" 
+          fill
+          sizes="100vw"
           className="w-full h-full object-cover opacity-20"
-          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#FDFBF7] via-transparent to-[#FDFBF7]" />
       </div>
@@ -42,11 +44,12 @@ const PodcastSection: React.FC = () => {
         <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-xl rounded-[3rem] overflow-hidden shadow-2xl border border-white/50 flex flex-col md:flex-row items-stretch">
           <div className="md:w-2/5 relative h-[400px] md:h-auto p-6">
             <div className="relative w-full h-full rounded-t-[12rem] rounded-b-[3rem] overflow-hidden shadow-inner border-4 border-white/50">
-              <img 
+              <Image
                 src="https://ajjwlwiyvg6jgwre.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-05%20at%2015.31.04.jpeg" 
                 alt="Myriam Gentile intervistata da Radio FM1" 
+                fill
+                sizes="(max-width: 767px) 100vw, 40vw"
                 className="absolute inset-0 w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#4A3F35]/40 to-transparent flex items-end p-8">
                 <div className="bg-[#1DB954] p-3 rounded-full shadow-lg animate-pulse">

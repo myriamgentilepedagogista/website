@@ -13,6 +13,7 @@ const AccordionItem: React.FC<{
   <div className="border-b border-[#EBE7E0] last:border-0">
     <button 
       onClick={onClick}
+      aria-expanded={isOpen}
       className="w-full py-8 flex items-center justify-between text-left group focus:outline-none"
     >
       <div className="flex items-center gap-6">
