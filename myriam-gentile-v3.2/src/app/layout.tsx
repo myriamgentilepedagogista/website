@@ -1,6 +1,20 @@
 import type { Metadata } from 'next';
+import { Instrument_Serif, Inter } from 'next/font/google';
 import './globals.css';
-import ClientLayout from '../components/ClientLayout';
+import ClientLayout from '@/components/ClientLayout';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-instrument-serif',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://myriamgentilepedagogista.com'),
@@ -55,7 +69,7 @@ export default function RootLayout({
 
   return (
     <html lang="it">
-      <body>
+      <body className={`${inter.variable} ${instrumentSerif.variable}`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

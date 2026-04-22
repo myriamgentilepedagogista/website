@@ -1,16 +1,15 @@
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.js";
 
 @layer base {
   body {
     @apply bg-[#FDFBF7] text-[#4A3F35] antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-inter), 'Inter', sans-serif;
   }
   
   h1, h2, h3, .serif-font {
-    font-family: 'Instrument Serif', serif;
+    font-family: var(--font-instrument-serif), 'Instrument Serif', serif;
   }
 }
 
