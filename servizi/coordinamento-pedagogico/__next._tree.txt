@@ -1,0 +1,2 @@
+:HL["/_next/static/css/9a8e3f137f755b86.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"servizi","param":null,"prefetchHints":0,"slots":{"children":{"name":"coordinamento-pedagogico","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"46zIT03m3ko97flJ4RZ4U"}
