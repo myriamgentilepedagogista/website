@@ -1,4 +1,64 @@
 export const articleFaqSchemaBySlug: Record<string, Array<{ question: string; answer: string }>> = {
+  "come-smettere-di-urlare-con-i-figli": [
+    { question: "Urlare con i figli fa male?", answer: "Un urlo occasionale non segna un bambino, soprattutto se la relazione viene riparata. Quando diventa il modo abituale di comunicare, invece, aumenta paura e oppositività." },
+    { question: "Perché mio figlio mi ascolta solo quando urlo?", answer: "Perché ha imparato che l'urlo è il vero segnale di azione. Serve spostare l'autorevolezza alla prima richiesta, con vicinanza e conseguenze coerenti." },
+    { question: "Cosa fare dopo aver urlato con un figlio?", answer: "Calmarsi, tornare da lui, riconoscere l'errore senza giustificarsi troppo e ripetere la richiesta con calma." },
+    { question: "Come gestire la rabbia con i figli?", answer: "Riconoscere i propri segnali fisici, prendersi qualche secondo di pausa e organizzare in anticipo i momenti della giornata che generano più tensione." },
+  ],
+  "bambino-che-risponde-male-come-reagire": [
+    { question: "A che età i bambini iniziano a rispondere male?", answer: "Le prime opposizioni verbali arrivano intorno ai 3 anni. Si ripresentano spesso verso i 6-8 anni e in preadolescenza, con forme diverse." },
+    { question: "Devo punire mio figlio se mi risponde male?", answer: "Più della punizione funziona un confine chiaro, la richiesta mantenuta e una conseguenza coerente. L'obiettivo è insegnare un modo diverso di esprimersi." },
+    { question: "Cosa dire a un bambino che risponde male?", answer: "Una frase breve che riconosce l'emozione e mette il limite: “Vedo che sei arrabbiato, ma non puoi parlarmi così”." },
+    { question: "Rispondere male è segno di maleducazione?", answer: "Non necessariamente. È spesso una fase evolutiva o un'emozione espressa male. Diventa un problema se è costante e ottiene sempre l'effetto desiderato." },
+  ],
+  "bambino-che-non-accetta-il-no-frustrazione": [
+    { question: "Perché mio figlio fa una scenata ogni volta che dico no?", answer: "Perché la sua capacità di regolare la frustrazione è ancora in costruzione, e forse ha imparato che insistendo l'adulto cambia idea." },
+    { question: "È sbagliato dire troppi no ai bambini?", answer: "Sì, se il no diventa la risposta automatica. Meglio pochi no, chiari e mantenuti, accanto a molti sì possibili." },
+    { question: "Come insegnare a un bambino a tollerare la frustrazione?", answer: "Con limiti coerenti, vicinanza emotiva durante la crisi e piccole esperienze quotidiane di attesa e sconfitta." },
+    { question: "Cedere ogni tanto è un problema?", answer: "Cambiare idea per una buona ragione va bene. Cedere solo per far cessare il pianto rafforza il comportamento." },
+  ],
+  "bambino-che-non-vuole-fare-i-compiti": [
+    { question: "Devo fare i compiti insieme a mio figlio?", answer: "Meglio essere disponibili che seduti accanto. Il tuo ruolo è organizzare tempi e spazi e controllare alla fine, non svolgere i compiti con lui." },
+    { question: "Quanto tempo dovrebbe passare un bambino sui compiti?", answer: "Dipende da età e classe, ma ore quotidiane di lavoro nella scuola primaria sono un segnale da condividere con gli insegnanti." },
+    { question: "E se il rifiuto dei compiti nascondesse un DSA?", answer: "Se la fatica si concentra su lettura, scrittura o calcolo e persiste nel tempo, è utile un'osservazione specialistica." },
+    { question: "Come rendere mio figlio autonomo nei compiti?", answer: "Routine stabile, compiti divisi in blocchi, una presenza che si allontana gradualmente e la valorizzazione dell'impegno." },
+  ],
+  "bambino-che-non-vuole-dormire-routine-serale": [
+    { question: "A che ora dovrebbe andare a letto un bambino?", answer: "Dipende dall'età e dall'orario del risveglio. Più dell'ora esatta conta la regolarità, anche nel fine settimana." },
+    { question: "Quanto deve durare la routine della nanna?", answer: "Circa 20-30 minuti sono sufficienti. Una routine troppo lunga rischia di diventare essa stessa una trattativa." },
+    { question: "Cosa fare se il bambino si alza continuamente?", answer: "Riaccompagnarlo a letto con calma, poche parole e sempre nello stesso modo, senza trasformare il rientro in un momento di gioco." },
+    { question: "Il bambino può addormentarsi con il tablet?", answer: "È sconsigliato: la luce degli schermi e i contenuti stimolanti ritardano l'addormentamento e peggiorano la qualità del sonno." },
+  ],
+  "mattine-caotiche-bambini-uscire-di-casa-senza-urlare": [
+    { question: "Come velocizzare un bambino lento la mattina?", answer: "Non mettendogli fretta, ma riducendo le decisioni, preparando tutto la sera prima e rendendo il tempo concreto con timer o canzoni." },
+    { question: "A che età un bambino può vestirsi da solo?", answer: "Intorno ai 4-5 anni molti bambini si vestono quasi da soli, se hanno avuto occasione di provare. Serve tempo e pazienza, non perfezione." },
+    { question: "Funzionano le tabelle delle routine?", answer: "Sì, soprattutto con i bambini piccoli: rendono visibile la sequenza e spostano il controllo dal genitore alla routine." },
+    { question: "E se il bambino non vuole andare a scuola?", answer: "Se la resistenza è frequente e intensa, è importante capire cosa succede a scuola e parlarne con gli insegnanti." },
+  ],
+  "punizioni-o-conseguenze-educazione-figli": [
+    { question: "Le punizioni fanno male ai bambini?", answer: "Le punizioni umilianti, fisiche o sproporzionate sì. Più in generale, le punizioni scollegate dal comportamento insegnano poco e tendono a peggiorare la relazione." },
+    { question: "Cosa sostituisce la punizione?", answer: "Conseguenze logiche e proporzionate, riparazione del danno e attenzione ai comportamenti positivi." },
+    { question: "Il time-out funziona?", answer: "Può essere utile se vissuto come pausa per calmarsi, meglio se con l'adulto vicino, e non come isolamento punitivo." },
+    { question: "Togliere il tablet è una buona conseguenza?", answer: "Lo è se è collegata a un uso scorretto del tablet stesso. Toglierlo per qualsiasi comportamento lo trasforma in punizione generica." },
+  ],
+  "bambino-che-dice-parolacce-cosa-fare": [
+    { question: "A che età i bambini iniziano a dire parolacce?", answer: "Spesso già intorno ai 3-4 anni, quando scoprono l'effetto che certe parole hanno sugli adulti." },
+    { question: "Devo ignorare le parolacce?", answer: "Con i più piccoli, ignorare la prima volta può funzionare. Se si ripetono, serve un confine breve e calmo." },
+    { question: "Come spiegare a un bambino cosa sono le parolacce?", answer: "Come parole che possono offendere o mettere a disagio, che non si usano in casa o in certi contesti." },
+    { question: "E se le parolacce le impara a scuola?", answer: "È normale. Il lavoro non è isolarlo, ma aiutarlo a capire la differenza tra contesti e a esprimere le emozioni in altri modi." },
+  ],
+  "bambino-che-non-sta-mai-fermo-quando-preoccuparsi": [
+    { question: "Un bambino molto vivace è iperattivo?", answer: "Non necessariamente. La vivacità è normale, soprattutto nei più piccoli. Solo una valutazione specialistica può indicare un disturbo dell'attenzione." },
+    { question: "A che età si può capire se c'è un problema di attenzione?", answer: "Di solito le difficoltà diventano più evidenti con l'ingresso alla scuola primaria, quando aumentano le richieste di attenzione e autocontrollo." },
+    { question: "Lo sport aiuta i bambini irrequieti?", answer: "Sì, il movimento regolare aiuta a scaricare energia e a migliorare la concentrazione nei momenti strutturati." },
+    { question: "Cosa fare se la maestra dice che mio figlio non sta mai fermo?", answer: "Ascoltare le osservazioni, confrontarle con quello che vedi a casa e, se le difficoltà persistono, chiedere una consulenza." },
+  ],
+  "figlio-adolescente-non-parla-come-comunicare": [
+    { question: "È normale che un adolescente non parli con i genitori?", answer: "Sì, entro certi limiti. Il bisogno di privacy e autonomia è tipico di questa fase. Va osservato se si accompagna a cambiamenti forti e prolungati." },
+    { question: "Come far parlare un figlio adolescente?", answer: "Non forzandolo: scegliendo momenti informali, ascoltando senza giudicare e mostrando interesse per il suo mondo." },
+    { question: "Devo controllare il telefono di mio figlio?", answer: "È preferibile stabilire regole condivise sull'uso del telefono. Il controllo di nascosto rischia di compromettere la fiducia." },
+    { question: "Quando il silenzio di un adolescente deve preoccupare?", answer: "Quando si accompagna a isolamento, calo scolastico improvviso, cambiamenti nel sonno o nell'alimentazione, o tristezza che dura nel tempo." },
+  ],
   "bambino-che-non-ascolta-cosa-fare-senza-urlare": [
     { question: "Perché mio figlio mi ascolta solo quando urlo?", answer: "Perché probabilmente ha imparato che l'urlo è il vero segnale di azione. Serve ricostruire richieste chiare e conseguenze coerenti prima di arrivare alla rabbia." },
     { question: "Un bambino che non ascolta è maleducato?", answer: "Non sempre. Può essere stanco, immerso nel gioco, poco abituato alle routine o in difficoltà con i limiti. Va osservata la dinamica, non solo il comportamento." },

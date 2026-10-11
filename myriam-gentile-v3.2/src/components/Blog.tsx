@@ -3,6 +3,7 @@ import React from 'react';
 import { Calendar, ArrowRight, Lightbulb, ShieldCheck, Brain, Target, Users, BookOpen, Heart, Sparkles, ChevronRight, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 import { articles2026 } from './Blog2026Articles';
+import { articlesAutunno2026 } from './BlogAutunno2026Articles';
 import { articleIsoDateBySlug } from './articleDates';
 
 export interface Article {
@@ -20,6 +21,7 @@ interface BlogProps {
 }
 
 export const articles: Article[] = [
+  ...articlesAutunno2026,
   ...articles2026,
   {
     title: "Quando rivolgersi a un pedagogista: i segnali fondamentali",
