@@ -79,6 +79,8 @@ const Credentials: React.FC = () => {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 pl-4">
                 {[
+                  "Pedagogia del Neurosviluppo 0-6 anni – Corso di perfezionamento professionale (Centro Psicopedagogico di Formazione OIDA)",
+                  "Lavorare con gli strumenti strength based nella consulenza pedagogica – Workshop con Fabio Olivieri (S.I.P.P.)",
                   "Saper stare nei conflitti sul lavoro (Novara - CPP)",
                   "Study Empowerment for Inclusion (Unimc)",
                   "Trattamento DSA (Centro Studi Erickson)",
@@ -115,6 +117,16 @@ const Credentials: React.FC = () => {
                     Coordinamento Pedagogico e Supervisione
                   </h4>
                   <div className="space-y-6 pl-4 border-l border-[#EBE7E0]">
+                    <div className="relative pl-6">
+                      <div className="absolute top-1.5 left-[-5.5px] w-2.5 h-2.5 rounded-full bg-[#55634A]"></div>
+                      <p className="font-bold text-[#4A3F35]">Set 2026 – Presente</p>
+                      <p className="text-sm">Coordinatrice Pedagogica e Supervisora presso Nido d'infanzia comunale "La Cicogna" di Potenza Picena (Macerata).</p>
+                    </div>
+                    <div className="relative pl-6">
+                      <div className="absolute top-1.5 left-[-5.5px] w-2.5 h-2.5 rounded-full bg-[#55634A]"></div>
+                      <p className="font-bold text-[#4A3F35]">Set 2026 – Presente</p>
+                      <p className="text-sm">Coordinatrice Pedagogica e Supervisora presso Nido d'infanzia comunale "L'Aquilone" di Porto Potenza Picena (Macerata).</p>
+                    </div>
                     <div className="relative pl-6">
                       <div className="absolute top-1.5 left-[-5.5px] w-2.5 h-2.5 rounded-full bg-[#55634A]"></div>
                       <p className="font-bold text-[#4A3F35]">Ott 2025 – Presente</p>
