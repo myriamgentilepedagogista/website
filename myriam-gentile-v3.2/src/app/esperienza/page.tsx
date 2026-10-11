@@ -36,6 +36,8 @@ export default function ExperiencePage() {
   ];
 
   const specialistCourses = [
+    "Pedagogia del Neurosviluppo 0-6 anni – Corso di perfezionamento professionale (Centro Psicopedagogico di Formazione OIDA)",
+    "Lavorare con gli strumenti strength based nella consulenza pedagogica – Workshop con Fabio Olivieri (S.I.P.P.)",
     "Saper stare nei conflitti sul lavoro (Novara - CPP)",
     "Study Empowerment for Inclusion (Unimc)",
     "Trattamento DSA (Centro Studi Erickson)",
@@ -55,6 +57,16 @@ export default function ExperiencePage() {
     {
       category: "Coordinamento Pedagogico e Supervisione",
       items: [
+        {
+          period: "Set 2026 – Presente",
+          role: 'Coordinatrice Pedagogica e Supervisora presso Nido d\'infanzia comunale "La Cicogna"',
+          org: "Potenza Picena (Macerata)"
+        },
+        {
+          period: "Set 2026 – Presente",
+          role: 'Coordinatrice Pedagogica e Supervisora presso Nido d\'infanzia comunale "L\'Aquilone"',
+          org: "Porto Potenza Picena (Macerata)"
+        },
         {
           period: "Ott 2025 – Presente",
           role: 'Coordinatrice Pedagogica e Supervisora presso Nido d\'infanzia comunale "Il Cucciolo"',
