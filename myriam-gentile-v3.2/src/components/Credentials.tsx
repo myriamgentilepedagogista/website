@@ -83,8 +83,8 @@ const Credentials: React.FC = () => {
                   "Lavorare con gli strumenti strength based nella consulenza pedagogica – Workshop con Fabio Olivieri (S.I.P.P.)",
                   "Saper stare nei conflitti sul lavoro (Novara - CPP)",
                   "Study Empowerment for Inclusion (Unimc)",
-                  "Trattamento DSA (Centro Studi Erickson)",
-                  "Parent Training: percorsi di sostegno (Erickson)",
+                  "Trattamento DSA (con il Dott. Gianluca Lo Presti)",
+                  "Parent Training (Centro Studi Erickson)",
                   "Consulenza Pedagogica Genitoriale (S.I.P.P.)",
                   "Facilitatrice Mindfulness (Mindfulness Educators)",
                   "Esperta in Orientamento Scolastico (ASNOR)",
@@ -92,8 +92,8 @@ const Credentials: React.FC = () => {
                   "Tutor per alunni con difficoltà e DSA (S.I.P.P.)",
                   "Coordinamento Psicopedagogico 0-6 (S.I.P.P.)",
                   "Volontari nei centri antiviolenza (SOS Donna)",
-                  "La relazione con le famiglie (Ambito n.15)",
-                  "Buone pratiche sociali contro la discriminazione (Unimc)"
+                  "La relazione con le famiglie (ATS 15 Coordinamento Pedagogico territoriale)",
+                  "Buone pratiche sociali contro la discriminazione (Università di Camerino)"
                 ].map((course, idx) => (
                   <div key={idx} className="flex gap-3 text-sm border-b border-[#F3F0E9] pb-2">
                     <Award className="w-4 h-4 text-[#96472D] shrink-0 mt-0.5" />
@@ -135,12 +135,12 @@ const Credentials: React.FC = () => {
                     <div className="relative pl-6">
                       <div className="absolute top-1.5 left-[-5.5px] w-2.5 h-2.5 rounded-full bg-[#EBE7E0]"></div>
                       <p className="font-bold text-[#4A3F35]">Mar 2025 – Presente</p>
-                      <p className="text-sm">Coordinatrice Pedagogica e Supervisora presso Nido d'infanzia comunale "Raggio di Sole" (Lacerenza Multiservice S.r.l.) di Monte San Giusto (Macerata).</p>
+                      <p className="text-sm">Coordinatrice Pedagogica e Supervisora presso Nido d'infanzia comunale "Raggio di Sole" di Monte San Giusto (Macerata).</p>
                     </div>
                     <div className="relative pl-6">
                       <div className="absolute top-1.5 left-[-5.5px] w-2.5 h-2.5 rounded-full bg-[#EBE7E0]"></div>
                       <p className="font-bold text-[#4A3F35]">Ott 2023 – Lug 2024</p>
-                      <p className="text-sm">Coordinatrice Pedagogica e Supervisora presso Nido d'infanzia comunale "L'isola che non c'è" (Coop. Soc. PARS Onlus) di Porto Sant'Elpidio (Fermo).</p>
+                      <p className="text-sm">Coordinatrice Pedagogica e Supervisora presso Nido d'infanzia comunale "L'isola che non c'è" di Porto Sant'Elpidio (Fermo).</p>
                     </div>
                     <div className="relative pl-6">
                       <div className="absolute top-1.5 left-[-5.5px] w-2.5 h-2.5 rounded-full bg-[#EBE7E0]"></div>
@@ -221,6 +221,11 @@ const Credentials: React.FC = () => {
                       <div className="absolute top-1.5 left-[-5.5px] w-2.5 h-2.5 rounded-full bg-[#EBE7E0]"></div>
                       <p className="font-bold text-[#4A3F35]">Gen – Mar 2020</p>
                       <p className="text-sm">Educatrice per Progetto di educazione alimentare presso Associazione Culturale "Liberalibri".</p>
+                    </div>
+                    <div className="relative pl-6">
+                      <div className="absolute top-1.5 left-[-5.5px] w-2.5 h-2.5 rounded-full bg-[#EBE7E0]"></div>
+                      <p className="font-bold text-[#4A3F35]">Set 2018 – Ott 2020</p>
+                      <p className="text-sm">Educatrice di comunità per minori presso Comunità di Capodarco (Fermo).</p>
                     </div>
                   </div>
                 </div>
