@@ -9,7 +9,7 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
-  const MYRIAM_IMAGE_URL = "/Myriam-Gentile_pedagogista.png";
+  const MYRIAM_IMAGE_URL = "/Myriam-Gentile-pedagogista.webp";
 
   return (
     <section id="hero" className="relative pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden">
